@@ -7,25 +7,121 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0F290614E46DAB007565C4 /* hudbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290514E46DAB007565C4 /* hudbg.png */; };
+		3B0F290914E46EAD007565C4 /* blueteamBadge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290714E46EAD007565C4 /* blueteamBadge.png */; };
+		3B0F290A14E46EAD007565C4 /* RedTeamBadge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290814E46EAD007565C4 /* RedTeamBadge.png */; };
+		3B0F290D14E4703E007565C4 /* bluescorebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290B14E4703E007565C4 /* bluescorebg.png */; };
+		3B0F290E14E4703E007565C4 /* redscorebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290C14E4703E007565C4 /* redscorebg.png */; };
+		3B0F291014E47691007565C4 /* InGameScanButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290F14E47691007565C4 /* InGameScanButton.png */; };
+		3B0F291214E47A28007565C4 /* powerupButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F291114E47A28007565C4 /* powerupButton.png */; };
 		3B48A93414D5FDD800846AD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B48A93314D5FDD800846AD6 /* UIKit.framework */; };
 		3B48A93614D5FDD800846AD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B48A93514D5FDD800846AD6 /* Foundation.framework */; };
 		3B48A93814D5FDD800846AD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B48A93714D5FDD800846AD6 /* CoreGraphics.framework */; };
 		3B48A93E14D5FDD800846AD6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A93C14D5FDD800846AD6 /* InfoPlist.strings */; };
 		3B48A94014D5FDD800846AD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48A93F14D5FDD800846AD6 /* main.m */; };
-		3B48A94414D5FDD800846AD6 /* JZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48A94314D5FDD800846AD6 /* JZAppDelegate.m */; };
+		3B48A94B14D5FE6700846AD6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A94A14D5FE6700846AD6 /* Default@2x.png */; };
+		3B48A95014D5FF5000846AD6 /* JZJoinGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */; };
+		3B48A95214D6002300846AD6 /* QRButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95114D6002300846AD6 /* QRButton.png */; };
+		3B48A95814D6009100846AD6 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95314D6009100846AD6 /* Join.png */; };
+		3B48A95914D6009100846AD6 /* Base.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95414D6009100846AD6 /* Base.png */; };
+		3B48A95A14D6009100846AD6 /* topSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95514D6009100846AD6 /* topSlider.png */; };
+		3B48A95B14D6009100846AD6 /* BtmSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95614D6009100846AD6 /* BtmSlider.png */; };
+		3B5766BA14E2A80F00C4F15D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766B914E2A80F00C4F15D /* AVFoundation.framework */; };
+		3B5766BC14E2A81600C4F15D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766BB14E2A81600C4F15D /* AudioToolbox.framework */; };
+		3B5766BE14E2A82000C4F15D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766BD14E2A82000C4F15D /* CoreVideo.framework */; };
+		3B5766C014E2A82900C4F15D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766BF14E2A82900C4F15D /* CoreMedia.framework */; };
+		3B5766C214E2A84800C4F15D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766C114E2A84800C4F15D /* libiconv.dylib */; };
+		3B5766C414E2A85100C4F15D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766C314E2A85100C4F15D /* AddressBook.framework */; };
+		3B5766C614E2A85400C4F15D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766C514E2A85400C4F15D /* AddressBookUI.framework */; };
+		3B63BD2614E2EC0800D24E22 /* JZAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD2514E2EC0800D24E22 /* JZAppDelegate.mm */; };
+		3B63BD3214E311AF00D24E22 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3114E311AE00D24E22 /* filter.png */; };
+		3B63BD3414E453B000D24E22 /* info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3314E453AF00D24E22 /* info-icon.png */; };
+		3B63BD3614E454E600D24E22 /* Info1 .png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3514E454E600D24E22 /* Info1 .png */; };
+		3B63BD3814E457EB00D24E22 /* rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3714E457EB00D24E22 /* rank.png */; };
+		3B63BD3A14E4591A00D24E22 /* Rank_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3914E4591A00D24E22 /* Rank_text.png */; };
+		3B63BD3E14E45E5200D24E22 /* JZInfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD3C14E45E5200D24E22 /* JZInfoScreen.m */; };
+		3B63BD3F14E45E5200D24E22 /* JZInfoScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3D14E45E5200D24E22 /* JZInfoScreen.xib */; };
+		3B63BD4714E4647300D24E22 /* JZRank.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD4514E4647300D24E22 /* JZRank.m */; };
+		3B63BD4814E4647300D24E22 /* JZRank.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD4614E4647300D24E22 /* JZRank.xib */; };
+		3B63BD4C14E4698C00D24E22 /* JZHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD4A14E4698C00D24E22 /* JZHUD.m */; };
+		3B63BD4D14E4698C00D24E22 /* JZHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD4B14E4698C00D24E22 /* JZHUD.xib */; };
+		3BE25FEE14E2AE6B008332DC /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE25FE914E2AE27008332DC /* libZXingWidget.a */; };
+		3BE7478914E2E8DE00EE9C42 /* JZJoinGame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3BE25FE814E2AE27008332DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
+		3BE25FEA14E2AE27008332DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D60398D13DF7CAD006F4B51;
+			remoteInfo = ZXingTests;
+		};
+		3BE25FEC14E2AE63008332DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3B0F290514E46DAB007565C4 /* hudbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hudbg.png; sourceTree = "<group>"; };
+		3B0F290714E46EAD007565C4 /* blueteamBadge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueteamBadge.png; sourceTree = "<group>"; };
+		3B0F290814E46EAD007565C4 /* RedTeamBadge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedTeamBadge.png; sourceTree = "<group>"; };
+		3B0F290B14E4703E007565C4 /* bluescorebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluescorebg.png; sourceTree = "<group>"; };
+		3B0F290C14E4703E007565C4 /* redscorebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redscorebg.png; sourceTree = "<group>"; };
+		3B0F290F14E47691007565C4 /* InGameScanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InGameScanButton.png; sourceTree = "<group>"; };
+		3B0F291114E47A28007565C4 /* powerupButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerupButton.png; sourceTree = "<group>"; };
 		3B48A92F14D5FDD800846AD6 /* QRZar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRZar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B48A93314D5FDD800846AD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B48A93514D5FDD800846AD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B48A93714D5FDD800846AD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3B48A93B14D5FDD800846AD6 /* QRZar-Info.plist */ = {isa = PBXFileReference; path = "QRZar-Info.plist"; sourceTree = "<group>"; };
+		3B48A93B14D5FDD800846AD6 /* QRZar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QRZar-Info.plist"; sourceTree = "<group>"; };
 		3B48A93D14D5FDD800846AD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B48A93F14D5FDD800846AD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3B48A94114D5FDD800846AD6 /* QRZar-Prefix.pch */ = {isa = PBXFileReference; path = "QRZar-Prefix.pch"; sourceTree = "<group>"; };
-		3B48A94214D5FDD800846AD6 /* JZAppDelegate.h */ = {isa = PBXFileReference; path = JZAppDelegate.h; sourceTree = "<group>"; };
-		3B48A94314D5FDD800846AD6 /* JZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZAppDelegate.m; sourceTree = "<group>"; };
+		3B48A94114D5FDD800846AD6 /* QRZar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QRZar-Prefix.pch"; sourceTree = "<group>"; };
+		3B48A94214D5FDD800846AD6 /* JZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZAppDelegate.h; sourceTree = "<group>"; };
+		3B48A94A14D5FE6700846AD6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3B48A94C14D5FF5000846AD6 /* JZJoinGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZJoinGame.h; sourceTree = "<group>"; };
+		3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZJoinGame.xib; path = QRZar/JZJoinGame.xib; sourceTree = "<group>"; };
+		3B48A95114D6002300846AD6 /* QRButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QRButton.png; path = Images/QRButton.png; sourceTree = "<group>"; };
+		3B48A95314D6009100846AD6 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Join.png; path = Images/Join.png; sourceTree = "<group>"; };
+		3B48A95414D6009100846AD6 /* Base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base.png; path = Images/Base.png; sourceTree = "<group>"; };
+		3B48A95514D6009100846AD6 /* topSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topSlider.png; path = Images/topSlider.png; sourceTree = "<group>"; };
+		3B48A95614D6009100846AD6 /* BtmSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BtmSlider.png; path = Images/BtmSlider.png; sourceTree = "<group>"; };
+		3B5766B914E2A80F00C4F15D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3B5766BB14E2A81600C4F15D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3B5766BD14E2A82000C4F15D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3B5766BF14E2A82900C4F15D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3B5766C114E2A84800C4F15D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		3B5766C314E2A85100C4F15D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3B5766C514E2A85400C4F15D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		3B63BD2514E2EC0800D24E22 /* JZAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JZAppDelegate.mm; sourceTree = "<group>"; };
+		3B63BD3114E311AE00D24E22 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		3B63BD3314E453AF00D24E22 /* info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-icon.png"; sourceTree = "<group>"; };
+		3B63BD3514E454E600D24E22 /* Info1 .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info1 .png"; sourceTree = "<group>"; };
+		3B63BD3714E457EB00D24E22 /* rank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank.png; sourceTree = "<group>"; };
+		3B63BD3914E4591A00D24E22 /* Rank_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rank_text.png; sourceTree = "<group>"; };
+		3B63BD3B14E45E5100D24E22 /* JZInfoScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZInfoScreen.h; sourceTree = "<group>"; };
+		3B63BD3C14E45E5200D24E22 /* JZInfoScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZInfoScreen.m; sourceTree = "<group>"; };
+		3B63BD3D14E45E5200D24E22 /* JZInfoScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZInfoScreen.xib; path = QRZar/JZInfoScreen.xib; sourceTree = "<group>"; };
+		3B63BD4414E4647300D24E22 /* JZRank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZRank.h; path = ../JZRank.h; sourceTree = "<group>"; };
+		3B63BD4514E4647300D24E22 /* JZRank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZRank.m; path = ../JZRank.m; sourceTree = "<group>"; };
+		3B63BD4614E4647300D24E22 /* JZRank.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JZRank.xib; sourceTree = "<group>"; };
+		3B63BD4914E4698C00D24E22 /* JZHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZHUD.h; path = ../JZHUD.h; sourceTree = "<group>"; };
+		3B63BD4A14E4698C00D24E22 /* JZHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZHUD.m; path = ../JZHUD.m; sourceTree = "<group>"; };
+		3B63BD4B14E4698C00D24E22 /* JZHUD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JZHUD.xib; sourceTree = "<group>"; };
+		3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = "zxing-2.0/iphone/ZXingWidget/ZXingWidget.xcodeproj"; sourceTree = "<group>"; };
+		3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JZJoinGame.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +129,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE25FEE14E2AE6B008332DC /* libZXingWidget.a in Frameworks */,
+				3B5766C614E2A85400C4F15D /* AddressBookUI.framework in Frameworks */,
+				3B5766C414E2A85100C4F15D /* AddressBook.framework in Frameworks */,
+				3B5766C214E2A84800C4F15D /* libiconv.dylib in Frameworks */,
+				3B5766C014E2A82900C4F15D /* CoreMedia.framework in Frameworks */,
+				3B5766BE14E2A82000C4F15D /* CoreVideo.framework in Frameworks */,
+				3B5766BC14E2A81600C4F15D /* AudioToolbox.framework in Frameworks */,
+				3B5766BA14E2A80F00C4F15D /* AVFoundation.framework in Frameworks */,
 				3B48A93414D5FDD800846AD6 /* UIKit.framework in Frameworks */,
 				3B48A93614D5FDD800846AD6 /* Foundation.framework in Frameworks */,
 				3B48A93814D5FDD800846AD6 /* CoreGraphics.framework in Frameworks */,
@@ -45,8 +149,11 @@
 		3B48A92414D5FDD800846AD6 = {
 			isa = PBXGroup;
 			children = (
-				3B48A93914D5FDD800846AD6 /* QRZar */,
+				3B48A93914D5FDD800846AD6 /* Classes */,
+				3B71B84414E29EA500C3EFE8 /* Resources */,
+				3B71B86D14E2A05000C3EFE8 /* Dependancies */,
 				3B48A93214D5FDD800846AD6 /* Frameworks */,
+				3B48A93A14D5FDD800846AD6 /* Supporting Files */,
 				3B48A93014D5FDD800846AD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +169,13 @@
 		3B48A93214D5FDD800846AD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B5766C514E2A85400C4F15D /* AddressBookUI.framework */,
+				3B5766C314E2A85100C4F15D /* AddressBook.framework */,
+				3B5766C114E2A84800C4F15D /* libiconv.dylib */,
+				3B5766BF14E2A82900C4F15D /* CoreMedia.framework */,
+				3B5766BD14E2A82000C4F15D /* CoreVideo.framework */,
+				3B5766BB14E2A81600C4F15D /* AudioToolbox.framework */,
+				3B5766B914E2A80F00C4F15D /* AVFoundation.framework */,
 				3B48A93314D5FDD800846AD6 /* UIKit.framework */,
 				3B48A93514D5FDD800846AD6 /* Foundation.framework */,
 				3B48A93714D5FDD800846AD6 /* CoreGraphics.framework */,
@@ -69,13 +183,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3B48A93914D5FDD800846AD6 /* QRZar */ = {
+		3B48A93914D5FDD800846AD6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				3B48A94214D5FDD800846AD6 /* JZAppDelegate.h */,
-				3B48A94314D5FDD800846AD6 /* JZAppDelegate.m */,
-				3B48A93A14D5FDD800846AD6 /* Supporting Files */,
+				3B63BD2514E2EC0800D24E22 /* JZAppDelegate.mm */,
+				3B63BD3B14E45E5100D24E22 /* JZInfoScreen.h */,
+				3B63BD3C14E45E5200D24E22 /* JZInfoScreen.m */,
+				3B63BD4914E4698C00D24E22 /* JZHUD.h */,
+				3B63BD4A14E4698C00D24E22 /* JZHUD.m */,
+				3B48A94C14D5FF5000846AD6 /* JZJoinGame.h */,
+				3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */,
+				3B63BD4414E4647300D24E22 /* JZRank.h */,
+				3B63BD4514E4647300D24E22 /* JZRank.m */,
 			);
+			name = Classes;
 			path = QRZar;
 			sourceTree = "<group>";
 		};
@@ -88,6 +210,61 @@
 				3B48A94114D5FDD800846AD6 /* QRZar-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = QRZar;
+			sourceTree = "<group>";
+		};
+		3B71B84414E29EA500C3EFE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3BDA36A014E54F3B00944B4D /* Images */,
+				3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */,
+				3B63BD3D14E45E5200D24E22 /* JZInfoScreen.xib */,
+				3B63BD4614E4647300D24E22 /* JZRank.xib */,
+				3B63BD4B14E4698C00D24E22 /* JZHUD.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3B71B86D14E2A05000C3EFE8 /* Dependancies */ = {
+			isa = PBXGroup;
+			children = (
+				3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */,
+			);
+			name = Dependancies;
+			sourceTree = "<group>";
+		};
+		3BDA36A014E54F3B00944B4D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3B63BD3114E311AE00D24E22 /* filter.png */,
+				3B48A94A14D5FE6700846AD6 /* Default@2x.png */,
+				3B48A95114D6002300846AD6 /* QRButton.png */,
+				3B0F290B14E4703E007565C4 /* bluescorebg.png */,
+				3B0F291114E47A28007565C4 /* powerupButton.png */,
+				3B0F290C14E4703E007565C4 /* redscorebg.png */,
+				3B0F290514E46DAB007565C4 /* hudbg.png */,
+				3B0F290F14E47691007565C4 /* InGameScanButton.png */,
+				3B63BD3314E453AF00D24E22 /* info-icon.png */,
+				3B0F290714E46EAD007565C4 /* blueteamBadge.png */,
+				3B0F290814E46EAD007565C4 /* RedTeamBadge.png */,
+				3B63BD3914E4591A00D24E22 /* Rank_text.png */,
+				3B48A95314D6009100846AD6 /* Join.png */,
+				3B48A95414D6009100846AD6 /* Base.png */,
+				3B63BD3714E457EB00D24E22 /* rank.png */,
+				3B63BD3514E454E600D24E22 /* Info1 .png */,
+				3B48A95514D6009100846AD6 /* topSlider.png */,
+				3B48A95614D6009100846AD6 /* BtmSlider.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		3BE25FE114E2AE26008332DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BE25FE914E2AE27008332DC /* libZXingWidget.a */,
+				3BE25FEB14E2AE27008332DC /* ZXingTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +281,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3BE25FED14E2AE63008332DC /* PBXTargetDependency */,
 			);
 			name = QRZar;
 			productName = QRZar;
@@ -128,6 +306,12 @@
 			mainGroup = 3B48A92414D5FDD800846AD6;
 			productRefGroup = 3B48A93014D5FDD800846AD6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3BE25FE114E2AE26008332DC /* Products */;
+					ProjectRef = 3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3B48A92E14D5FDD800846AD6 /* QRZar */,
@@ -135,12 +319,51 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		3BE25FE914E2AE27008332DC /* libZXingWidget.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZXingWidget.a;
+			remoteRef = 3BE25FE814E2AE27008332DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3BE25FEB14E2AE27008332DC /* ZXingTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZXingTests.octest;
+			remoteRef = 3BE25FEA14E2AE27008332DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		3B48A92D14D5FDD800846AD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3B48A93E14D5FDD800846AD6 /* InfoPlist.strings in Resources */,
+				3B48A94B14D5FE6700846AD6 /* Default@2x.png in Resources */,
+				3B48A95014D5FF5000846AD6 /* JZJoinGame.xib in Resources */,
+				3B48A95214D6002300846AD6 /* QRButton.png in Resources */,
+				3B48A95814D6009100846AD6 /* Join.png in Resources */,
+				3B48A95914D6009100846AD6 /* Base.png in Resources */,
+				3B48A95A14D6009100846AD6 /* topSlider.png in Resources */,
+				3B48A95B14D6009100846AD6 /* BtmSlider.png in Resources */,
+				3B63BD3214E311AF00D24E22 /* filter.png in Resources */,
+				3B63BD3414E453B000D24E22 /* info-icon.png in Resources */,
+				3B63BD3614E454E600D24E22 /* Info1 .png in Resources */,
+				3B63BD3814E457EB00D24E22 /* rank.png in Resources */,
+				3B63BD3A14E4591A00D24E22 /* Rank_text.png in Resources */,
+				3B63BD3F14E45E5200D24E22 /* JZInfoScreen.xib in Resources */,
+				3B63BD4814E4647300D24E22 /* JZRank.xib in Resources */,
+				3B63BD4D14E4698C00D24E22 /* JZHUD.xib in Resources */,
+				3B0F290614E46DAB007565C4 /* hudbg.png in Resources */,
+				3B0F290914E46EAD007565C4 /* blueteamBadge.png in Resources */,
+				3B0F290A14E46EAD007565C4 /* RedTeamBadge.png in Resources */,
+				3B0F290D14E4703E007565C4 /* bluescorebg.png in Resources */,
+				3B0F290E14E4703E007565C4 /* redscorebg.png in Resources */,
+				3B0F291014E47691007565C4 /* InGameScanButton.png in Resources */,
+				3B0F291214E47A28007565C4 /* powerupButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,11 +375,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B48A94014D5FDD800846AD6 /* main.m in Sources */,
-				3B48A94414D5FDD800846AD6 /* JZAppDelegate.m in Sources */,
+				3BE7478914E2E8DE00EE9C42 /* JZJoinGame.mm in Sources */,
+				3B63BD2614E2EC0800D24E22 /* JZAppDelegate.mm in Sources */,
+				3B63BD3E14E45E5200D24E22 /* JZInfoScreen.m in Sources */,
+				3B63BD4714E4647300D24E22 /* JZRank.m in Sources */,
+				3B63BD4C14E4698C00D24E22 /* JZHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BE25FED14E2AE63008332DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZXingWidget;
+			targetProxy = 3BE25FEC14E2AE63008332DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3B48A93C14D5FDD800846AD6 /* InfoPlist.strings */ = {
@@ -220,8 +455,14 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QRZar/QRZar-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"zxing-2.0/iphone/ZXingWidget/Classes/**",
+					"zxing-2.0/cpp/core/src/",
+				);
 				INFOPLIST_FILE = "QRZar/QRZar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PUBLIC_HEADERS_FOLDER_PATH[sdk=*]" = "$(CONTENTS_FOLDER_PATH)/Headers";
+				USER_HEADER_SEARCH_PATHS = "zxing-2.0/iphone/ZXingWidget/Classes/** zxing-2.0/cpp/core/src/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -231,8 +472,14 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QRZar/QRZar-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"zxing-2.0/iphone/ZXingWidget/Classes/**",
+					"zxing-2.0/cpp/core/src/",
+				);
 				INFOPLIST_FILE = "QRZar/QRZar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
+				USER_HEADER_SEARCH_PATHS = "zxing-2.0/iphone/ZXingWidget/Classes/** zxing-2.0/cpp/core/src/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -256,6 +503,7 @@
 				3B48A94914D5FDD800846AD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

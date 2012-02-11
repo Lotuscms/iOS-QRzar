@@ -11,13 +11,18 @@
 @implementation JZAppDelegate
 
 @synthesize window = _window;
+@synthesize joinGame = _joinGame;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.joinGame = [[JZJoinGame alloc] initWithNibName:@"JZJoinGame" bundle:nil];
+    self.window.rootViewController = self.joinGame;
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
