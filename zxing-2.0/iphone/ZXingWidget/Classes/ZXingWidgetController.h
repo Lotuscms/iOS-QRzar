@@ -19,7 +19,9 @@
 #import <AVFoundation/AVFoundation.h>
 #include "Decoder.h"
 #include "parsedResults/ParsedResult.h"
-#include "OverlayView.h"
+#import "JZQRInfo.h"
+
+//#include "OverlayView.h"
 
 @protocol ZXingDelegate;
 
@@ -28,7 +30,7 @@
 #endif
 
 @interface ZXingWidgetController : UIViewController<DecoderDelegate,
-                                                    CancelDelegate,
+//                                                    CancelDelegate,
                                                     UINavigationControllerDelegate
 #if HAS_AVFF
                                                     , AVCaptureVideoDataOutputSampleBufferDelegate
@@ -36,7 +38,7 @@
                                                     > {
   NSSet *readers;
   ParsedResult *result;
-  OverlayView *overlayView;
+//  OverlayView *overlayView;
   SystemSoundID beepSound;
   BOOL showCancel;
   NSURL *soundToPlay;
@@ -60,7 +62,7 @@
 @property (nonatomic, assign) id<ZXingDelegate> delegate;
 @property (nonatomic, retain) NSURL *soundToPlay;
 @property (nonatomic, retain) ParsedResult *result;
-@property (nonatomic, retain) OverlayView *overlayView;
+//@property (nonatomic, retain) OverlayView *overlayView;
 @property (nonatomic) CGRect  cropRect;
 
 - (id)initWithDelegate:(id<ZXingDelegate>)delegate showCancel:(BOOL)shouldShowCancel OneDMode:(BOOL)shouldUseoOneDMode withCrop:(CGRect)crop;
@@ -72,6 +74,6 @@
 @end
 
 @protocol ZXingDelegate
-- (void)zxingController:(ZXingWidgetController*)controller didScanResult:(NSString *)result;
+- (void)zxingController:(ZXingWidgetController*)controller didScanResult:(JZQRInfo *)result;
 - (void)zxingControllerDidCancel:(ZXingWidgetController*)controller;
 @end

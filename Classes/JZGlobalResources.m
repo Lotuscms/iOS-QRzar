@@ -8,6 +8,19 @@
 
 #import "JZGlobalResources.h"
 
+
 @implementation JZGlobalResources
+
+@synthesize topHatConnect, blocker, locationManager;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        topHatConnect =     [[JZTopHatConnect alloc] init];
+        blocker =           [[JZOneSecondBlocker alloc] init];
+        locationManager =   [[JZLocationManager alloc] init];
+    }
+    return self;
+}
 
 @end

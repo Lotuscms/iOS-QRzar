@@ -49,7 +49,7 @@
 @synthesize prevLayer;
 #endif
 @synthesize result, delegate, soundToPlay;
-@synthesize overlayView;
+
 @synthesize oneDMode, showCancel, isStatusBarHidden;
 @synthesize readers;
 @synthesize cropRect;
@@ -65,12 +65,7 @@
     self.cropRect = crop;
     beepSound = -1;
     decoding = NO;
-    OverlayView *theOverLayView = [[OverlayView alloc] initWithFrame:[UIScreen mainScreen].bounds 
-                                                       cancelEnabled:showCancel 
-                                                            oneDMode:oneDMode];
-    [theOverLayView setDelegate:self];
-    self.overlayView = theOverLayView;
-    [theOverLayView release];
+   
   }
   
   return self;
@@ -85,7 +80,6 @@
 
   [result release];
   [soundToPlay release];
-  [overlayView release];
   [readers release];
   [super dealloc];
 }
@@ -139,9 +133,6 @@
   decoding = YES;
 
   [self initCapture];
-  [self.view addSubview:overlayView];
-  
-  [overlayView setPoints:nil];
   wasCancelled = NO;
 }
 
@@ -149,7 +140,7 @@
   [super viewDidDisappear:animated];
   if (!isStatusBarHidden)
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-  [self.overlayView removeFromSuperview];
+  //[self.overlayView removeFromSuperview];
   [self stopCapture];
 }
 
@@ -256,7 +247,7 @@
                 usingSubset:(UIImage *)subset {
   // simply add the points to the image view
   NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithArray:resultPoints];
-  [overlayView setPoints:mutableArray];
+  //[overlayView setPoints:mutableArray];
   [mutableArray release];
 }
 
@@ -270,17 +261,17 @@
 
 - (void)notifyDelegate:(id)text {
   if (!isStatusBarHidden) [[UIApplication sharedApplication] setStatusBarHidden:NO];
-  [delegate zxingController:self didScanResult:text];
+    [delegate zxingController:self didScanResult:[[JZQRInfo alloc] init:text]];
   [text release];
 }
 
 - (void)decoder:(Decoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason {
   decoder.delegate = nil;
-  [overlayView setPoints:nil];
+  //[overlayView setPoints:nil];
 }
 
 - (void)decoder:(Decoder *)decoder foundPossibleResultPoint:(CGPoint)point {
-  [overlayView setPoint:point];
+  //[overlayView setPoint:point];
 }
 
 /*
@@ -429,9 +420,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   Decoder *d = [[Decoder alloc] init];
   d.readers = readers;
   d.delegate = self;
-  cropRect.origin.x = 0.0;  
-  cropRect.origin.y = 0.0;
-  decoding = [d decodeImage:scrn cropRect:cropRect] == YES ? NO : YES;
+  [d decodeImage:scrn cropRect:cropRect];
   [d release];
   [scrn release];
 } 

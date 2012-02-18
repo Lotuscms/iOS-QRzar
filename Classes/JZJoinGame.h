@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZXingWidgetController.h"
+#import "JZGlobalResources.h"
 
 
 @interface JZJoinGame : UIViewController <ZXingDelegate>{
@@ -16,7 +17,10 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* top;
 @property (nonatomic, retain) IBOutlet UIImageView* btm;
+@property (nonatomic, retain) IBOutlet UIImageView* lft;
+@property (nonatomic, retain) IBOutlet UIImageView* rht;
 @property (nonatomic, retain) ZXingWidgetController *widController;
+@property (nonatomic, retain) JZGlobalResources* resources;
 
 -(IBAction)openSliders;
 -(IBAction)closeSliders;

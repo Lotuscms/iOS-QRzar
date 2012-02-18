@@ -49,8 +49,6 @@
 		1F027FAE11A7BEAF006B06DE /* FormatReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F027FA211A7BEAF006B06DE /* FormatReader.h */; };
 		1F027FAF11A7BEAF006B06DE /* FormatReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F027FA311A7BEAF006B06DE /* FormatReader.mm */; };
 		1F027FB211A7BEAF006B06DE /* MultiFormatReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F027FA611A7BEAF006B06DE /* MultiFormatReader.mm */; };
-		1F027FB511A7BEAF006B06DE /* OverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F027FA911A7BEAF006B06DE /* OverlayView.h */; };
-		1F027FB611A7BEAF006B06DE /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F027FAA11A7BEAF006B06DE /* OverlayView.m */; };
 		1F027FBB11A7BEBF006B06DE /* TwoDDecoderResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F027FB711A7BEBF006B06DE /* TwoDDecoderResult.h */; };
 		1F027FBC11A7BEBF006B06DE /* TwoDDecoderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F027FB811A7BEBF006B06DE /* TwoDDecoderResult.m */; };
 		1F027FBD11A7BEBF006B06DE /* ZXingWidgetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F027FB911A7BEBF006B06DE /* ZXingWidgetController.h */; };
@@ -122,6 +120,8 @@
 		3B117EF1145B220A0035037B /* MonochromeRectangleDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B117EEF145B220A0035037B /* MonochromeRectangleDetector.cpp */; };
 		3B117EF2145B220A0035037B /* WhiteRectangleDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B117EF0145B220A0035037B /* WhiteRectangleDetector.cpp */; };
 		3B117EF5145B221D0035037B /* NotFoundException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B117EF4145B221D0035037B /* NotFoundException.cpp */; };
+		3B1BBCF114E9B175000C5F99 /* JZQRInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B1BBCEF14E9B175000C5F99 /* JZQRInfo.h */; };
+		3B1BBCF214E9B175000C5F99 /* JZQRInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BBCF014E9B175000C5F99 /* JZQRInfo.m */; };
 		3B27C5D8144735CE005157C4 /* FormatException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B27C5D6144735CE005157C4 /* FormatException.cpp */; };
 		3B27C5D9144735CE005157C4 /* FormatException.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B27C5D7144735CE005157C4 /* FormatException.h */; };
 		3B27C5E1144735E6005157C4 /* CharacterSetECI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B27C5DB144735E6005157C4 /* CharacterSetECI.cpp */; };
@@ -331,8 +331,6 @@
 		1F027FA211A7BEAF006B06DE /* FormatReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormatReader.h; path = Classes/FormatReader.h; sourceTree = "<group>"; };
 		1F027FA311A7BEAF006B06DE /* FormatReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FormatReader.mm; path = Classes/FormatReader.mm; sourceTree = "<group>"; };
 		1F027FA611A7BEAF006B06DE /* MultiFormatReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MultiFormatReader.mm; path = Classes/MultiFormatReader.mm; sourceTree = "<group>"; };
-		1F027FA911A7BEAF006B06DE /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayView.h; path = Classes/OverlayView.h; sourceTree = "<group>"; };
-		1F027FAA11A7BEAF006B06DE /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayView.m; path = Classes/OverlayView.m; sourceTree = "<group>"; };
 		1F027FB711A7BEBF006B06DE /* TwoDDecoderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwoDDecoderResult.h; path = Classes/TwoDDecoderResult.h; sourceTree = "<group>"; };
 		1F027FB811A7BEBF006B06DE /* TwoDDecoderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwoDDecoderResult.m; path = Classes/TwoDDecoderResult.m; sourceTree = "<group>"; };
 		1F027FB911A7BEBF006B06DE /* ZXingWidgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZXingWidgetController.h; path = Classes/ZXingWidgetController.h; sourceTree = "<group>"; };
@@ -404,6 +402,8 @@
 		3B117EEF145B220A0035037B /* MonochromeRectangleDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MonochromeRectangleDetector.cpp; path = detector/MonochromeRectangleDetector.cpp; sourceTree = "<group>"; };
 		3B117EF0145B220A0035037B /* WhiteRectangleDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WhiteRectangleDetector.cpp; path = detector/WhiteRectangleDetector.cpp; sourceTree = "<group>"; };
 		3B117EF4145B221D0035037B /* NotFoundException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NotFoundException.cpp; sourceTree = "<group>"; };
+		3B1BBCEF14E9B175000C5F99 /* JZQRInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZQRInfo.h; path = Classes/JZQRInfo.h; sourceTree = "<group>"; };
+		3B1BBCF014E9B175000C5F99 /* JZQRInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZQRInfo.m; path = Classes/JZQRInfo.m; sourceTree = "<group>"; };
 		3B27C5D6144735CE005157C4 /* FormatException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FormatException.cpp; sourceTree = "<group>"; };
 		3B27C5D7144735CE005157C4 /* FormatException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatException.h; sourceTree = "<group>"; };
 		3B27C5DB144735E6005157C4 /* CharacterSetECI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterSetECI.cpp; sourceTree = "<group>"; };
@@ -632,6 +632,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3B1BBCEF14E9B175000C5F99 /* JZQRInfo.h */,
+				3B1BBCF014E9B175000C5F99 /* JZQRInfo.m */,
 				1D603E6213E20AF1006F4B51 /* ArrayAndStringCategories.h */,
 				1D603E6313E20AF1006F4B51 /* ArrayAndStringCategories.m */,
 				1DFA090A13CE1A3900599044 /* CBarcodeFormat.h */,
@@ -654,8 +656,6 @@
 				1F027FA211A7BEAF006B06DE /* FormatReader.h */,
 				1F027FA311A7BEAF006B06DE /* FormatReader.mm */,
 				1F027FA611A7BEAF006B06DE /* MultiFormatReader.mm */,
-				1F027FA911A7BEAF006B06DE /* OverlayView.h */,
-				1F027FAA11A7BEAF006B06DE /* OverlayView.m */,
 				E5345A00119876A5000CB77F /* Actions */,
 				E53459EF119876A5000CB77F /* ParsedResults */,
 				E53459D4119876A5000CB77F /* ResultParsers */,
@@ -1106,7 +1106,6 @@
 				1F027FAB11A7BEAF006B06DE /* Decoder.h in Headers */,
 				1F027FAD11A7BEAF006B06DE /* DecoderDelegate.h in Headers */,
 				1F027FAE11A7BEAF006B06DE /* FormatReader.h in Headers */,
-				1F027FB511A7BEAF006B06DE /* OverlayView.h in Headers */,
 				1F027FBB11A7BEBF006B06DE /* TwoDDecoderResult.h in Headers */,
 				1F027FBD11A7BEBF006B06DE /* ZXingWidgetController.h in Headers */,
 				1F027FCD11A7BED6006B06DE /* AddContactAction.h in Headers */,
@@ -1161,6 +1160,7 @@
 				3B27C5E2144735E6005157C4 /* CharacterSetECI.h in Headers */,
 				3B27C5E4144735E6005157C4 /* ECI.h in Headers */,
 				3B27C5E6144735E6005157C4 /* StringUtils.h in Headers */,
+				3B1BBCF114E9B175000C5F99 /* JZQRInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1346,7 +1346,6 @@
 				1F027FAC11A7BEAF006B06DE /* Decoder.mm in Sources */,
 				1F027FAF11A7BEAF006B06DE /* FormatReader.mm in Sources */,
 				1F027FB211A7BEAF006B06DE /* MultiFormatReader.mm in Sources */,
-				1F027FB611A7BEAF006B06DE /* OverlayView.m in Sources */,
 				1F027FBC11A7BEBF006B06DE /* TwoDDecoderResult.m in Sources */,
 				1F027FBE11A7BEBF006B06DE /* ZXingWidgetController.m in Sources */,
 				1F027FCE11A7BED6006B06DE /* AddContactAction.m in Sources */,
@@ -1404,6 +1403,7 @@
 				3B117EF1145B220A0035037B /* MonochromeRectangleDetector.cpp in Sources */,
 				3B117EF2145B220A0035037B /* WhiteRectangleDetector.cpp in Sources */,
 				3B117EF5145B221D0035037B /* NotFoundException.cpp in Sources */,
+				3B1BBCF214E9B175000C5F99 /* JZQRInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

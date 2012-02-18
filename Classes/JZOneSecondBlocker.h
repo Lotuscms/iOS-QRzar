@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface JZOneSecondBlocker : NSObject
+@property bool blocker;
 
+-(BOOL)check;
+-(void)block;
+-(void)unblock;
 @end

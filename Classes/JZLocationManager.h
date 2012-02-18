@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface JZLocationManager : NSObject
+@interface JZLocationManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>
+
+@property (nonatomic, retain) CLLocation* currentLocation;
+@property (nonatomic, retain) CLLocationManager* locationManager;
+
+-(double)getLong;
+-(double)getLat;
+-(double)getRadius;
 
 @end
