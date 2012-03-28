@@ -13,7 +13,7 @@ const int SERVER_PING_DELAY = 5;
 
 @implementation JZHUD
 
-@synthesize widController, badge, time, timer, redTeamScore, blueTeamScore, powerUpPanel, bg, bonus, movingBG, cogs, trim, team, gameID, playerID, resources;
+@synthesize widController, badge, time, timer, redTeamScore, blueTeamScore, powerUpPanel, bg, bonus, movingBG, cogs, trim, team, resources;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,12 +29,11 @@ const int SERVER_PING_DELAY = 5;
     return self;
 }
 
+
 -(void)passJoinScan:(JZQRInfo*)i withResource:(JZGlobalResources *)r{
 	
 	resources = r;
 	
-	[self setGameID:i.gameID];
-	[self setPlayerID:i.playerID];
 	[self setTeam:i.team];
 	switch (team) {
 		case 'B':
@@ -78,15 +77,6 @@ const int SERVER_PING_DELAY = 5;
 	[self performSelector:@selector(countdown) withObject:NULL afterDelay:1];
 	
 }
-
-
--(void)serverPing{
-	
-	[self performSelector:@selector(serverPing) withObject:NULL afterDelay:SERVER_PING_DELAY];
-	
-}
-
-
 
 
 -(void)endGame{
@@ -133,8 +123,8 @@ const int SERVER_PING_DELAY = 5;
 // ZXing Delegate Methods
 
 - (void)zxingController:(ZXingWidgetController*)controller didScanResult:(JZQRInfo *)result{
-	if (result!=NULL && [[result gameID] isEqualToString:[self gameID]] && resources.blocker.check) {
-		NSLog(@"%@",[result playerID]);
+	if (result!=NULL && resources.blocker.check) {
+		[[resources topHatConnect] playerHasKilledPlayerWithID:[result playerID]];
 		
 	}
     

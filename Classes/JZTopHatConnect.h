@@ -9,33 +9,31 @@
 #import <Foundation/Foundation.h>
 
 
-@interface JZTopHatConnect : NSObject
+@interface JZTopHatConnect : NSObject <NSStreamDelegate>
+
+@property (nonatomic, retain) NSString* playerID;
+
+@property (nonatomic, retain) NSInputStream*  inputStream;
+@property (nonatomic, retain) NSOutputStream* outputStream;
 
 
 
-//  Could be lumped together server side.
-
--(BOOL)isGameCurrentlyActive:(NSString*)gameID;
-
--(BOOL)isCodeAlreadyRegisteredOnActiveGame:(NSString*)gameID withCode:(NSString*)playerID;
-
--(BOOL)createGameWithGameID:(NSString*)gameID;
-
--(BOOL)joinGame:(NSString*)gameID withPlayerID:(NSString*)playerID;
+- (id)initWithPlayerID:(NSString*)playerID;
 
 
 
 
 // In game calls
 
--(BOOL)isPlayerDeadForPlayerID:(NSString*)playerID inGameWithID:(NSString*)gameID;
 
--(BOOL)playerWithID:(NSString*)playerID hasKilledPlayerWithID:(NSString*)victimID;
+-(BOOL)playerHasKilledPlayerWithID:(NSString*)victimID;
 
--(NSDictionary*)getInGameInfoForPlayerWithID:(NSString*)playerID 
-                                inGameWithID:(NSString*)gameID 
-                                forLongitude:(double)longitude 
-                                 forLatitude:(double)latitude 
-                                withAccuracy:(double)accuracy;
+-(NSDictionary*)getInGameInfoForPlayerWithLongitude:(double)longitude 
+                                        forLatitude:(double)latitude 
+                                       withAccuracy:(double)accuracy;
+
+
+
+-(BOOL)revivePlayer;
 
 @end

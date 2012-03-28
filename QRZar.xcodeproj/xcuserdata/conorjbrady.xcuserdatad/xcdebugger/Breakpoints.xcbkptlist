@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/JZHUD.mm"
-         timestampString = "351263613.650217"
+         timestampString = "351302411.228189"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
+         startingLineNumber = "126"
+         endingLineNumber = "126"
          landmarkName = "-zxingController:didScanResult:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,12 +51,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/JZHUD.mm"
-         timestampString = "351263613.650217"
+         timestampString = "351302411.228189"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
-         landmarkName = "-passJoinScan:withLocation:"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "-passJoinScan:withResource:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -65,13 +65,39 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/JZHUD.mm"
-         timestampString = "351263613.650217"
+         timestampString = "351302411.228189"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
          landmarkName = "-showPowerUpPanel"
          landmarkType = "5">
+         <Locations>
+            <Location
+               shouldBeEnabled = "Yes"
+               ignoreCount = "0"
+               continueAfterRunningActions = "No"
+               symbolName = "-[JZHUD showPowerUpPanel]"
+               urlString = "file://localhost/Users/conorjbrady/Dropbox/College/Java%20Zombies/iOS-QRzar/QRZar/../Classes/JZHUD.mm"
+               timestampString = "353541880.178044"
+               startingColumnNumber = "9223372036854775807"
+               endingColumnNumber = "9223372036854775807"
+               startingLineNumber = "158"
+               endingLineNumber = "158">
+            </Location>
+            <Location
+               shouldBeEnabled = "Yes"
+               ignoreCount = "0"
+               continueAfterRunningActions = "No"
+               symbolName = "__25-[JZHUD showPowerUpPanel]_block_invoke_0"
+               urlString = "file://localhost/Users/conorjbrady/Dropbox/College/Java%20Zombies/iOS-QRzar/QRZar/../Classes/JZHUD.mm"
+               timestampString = "353541880.178268"
+               startingColumnNumber = "9223372036854775807"
+               endingColumnNumber = "9223372036854775807"
+               startingLineNumber = "158"
+               endingLineNumber = "158">
+            </Location>
+         </Locations>
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -86,6 +112,34 @@
          endingLineNumber = "12"
          landmarkName = "@implementation JZTopHatConnect"
          landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "zxing-2.0/iphone/ZXingWidget/Classes/JZQRInfo.m"
+         timestampString = "353540256.714269"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-init:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "zxing-2.0/iphone/ZXingWidget/Classes/JZQRInfo.m"
+         timestampString = "353545921.447564"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "-init:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -19,8 +19,6 @@
     IBOutlet UIImageView* bg;
     IBOutlet UILabel* blueTeamScore;
     IBOutlet UILabel* redTeamScore;
-    NSString* gameID;
-    NSString* playerID;
     char team;
     int time;
     IBOutlet UILabel* timer;
@@ -31,8 +29,6 @@
 @property (nonatomic, retain) IBOutlet  UIImageView*        badge;
 @property (nonatomic, retain) IBOutlet  UIImageView*        bg;
 @property (nonatomic, retain) IBOutlet  UIImageView*        movingBG;
-@property (nonatomic, retain)           NSString*           gameID;
-@property (nonatomic, retain)           NSString*           playerID;
 @property (nonatomic        )           char                team;
 @property (nonatomic        )           int                 time;
 @property (nonatomic, retain) IBOutlet  UILabel*            timer;
@@ -53,6 +49,5 @@
 -(IBAction)scanButtonWasReleased;
 -(IBAction)showPowerUpPanel;
 -(IBAction)dismissPowerUpPanel;
--(IBAction)serverPing;
 
 @end

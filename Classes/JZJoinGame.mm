@@ -68,11 +68,8 @@
                          top.frame = CGRectMake(0, -153, 320, 153);
                          btm.frame = CGRectMake(0, 305, 320, 154);
                      } 
-                     completion:^(BOOL finished){
-                         QRCodeReader* qrcodeReader = [[QRCodeReader alloc] init];
-                         NSSet *readers = [[NSSet alloc ] initWithObjects:qrcodeReader,nil];
-                         widController.readers = readers;
-                     }];
+                     completion:^(BOOL finished){}];
+	
     [UIView animateWithDuration:0.3
                           delay:0.3
                         options: UIViewAnimationCurveEaseOut
@@ -107,29 +104,14 @@
 
 - (void)zxingController:(ZXingWidgetController*)controller didScanResult:(JZQRInfo *)result {
     
-   
-    
-    if(result!=NULL && resources.blocker.check){
-        if (![[resources topHatConnect] isGameCurrentlyActive:[result gameID]]) {
-            
-            [[resources topHatConnect] createGameWithGameID:[result gameID]];
-            [[resources topHatConnect] joinGame:[result gameID] withPlayerID:[result playerID]];
-            
+    if(result!=NULL && resources.blocker.check){ 
+        resources.topHatConnect = [[JZTopHatConnect alloc] initWithPlayerID:[result playerID]];
+        if (resources.topHatConnect!=nil) {
             JZHUD* hud = [[JZHUD alloc] init];
             [self presentModalViewController:hud animated:NO];
             self.widController = NULL;
             [hud passJoinScan:result withResource:resources];
-            
-        }else if(![[resources topHatConnect] isCodeAlreadyRegisteredOnActiveGame:[result gameID] withCode:[result playerID]]){
-            
-            [[resources topHatConnect] joinGame:[result gameID] withPlayerID:[result playerID]];
-            
-            JZHUD* hud = [[JZHUD alloc] init];
-            [self presentModalViewController:hud animated:NO];
-            self.widController = NULL;
-            [hud passJoinScan:result withResource:resources];
-            
-        }
+        }     
     }
    
 }
