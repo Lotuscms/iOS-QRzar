@@ -8,24 +8,37 @@
 
 #import "JZLocationManager.h"
 
+@interface JZLocationManager (PrivateMethods)
+
+-(void) createLocationManager;
+
+@end
 
 @implementation JZLocationManager
 
-@synthesize currentLocation, locationManager;
+@synthesize currentLocation = _currentLocation;
+@synthesize locationManager = _locationManager;
 
 - (id)init {
     self = [super init];
     if (self) {
-        locationManager = [[CLLocationManager alloc] init];
-		locationManager.delegate = self;
-		[locationManager startUpdatingLocation];
+		[self performSelectorOnMainThread:@selector(createLocationManager) withObject:NULL waitUntilDone:YES];
+        
     }
     return self;
 }
 
+-(void)createLocationManager{
+	[self setLocationManager:[[CLLocationManager alloc] init]];
+	[[self locationManager] setDelegate:self];
+	[[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
+	[[self locationManager] startUpdatingLocation];
+}
+		 
+		 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
 	
-	currentLocation = newLocation;
+	[self setCurrentLocation:newLocation];
 	
 }
 
@@ -44,8 +57,7 @@
 			[alert show];
 		}
 			break;
-		default:
-		{
+		default:{
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Current Location" message:@"Unknown network error, game will now exit." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
 			[alert show];
 		}

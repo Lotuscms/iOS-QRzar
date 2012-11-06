@@ -7,15 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JZOneSecondBlocker.h"
+#import <CoreData/CoreData.h>
 #import "JZLocationManager.h"
 #import "JZTopHatConnect.h"
 
-@interface JZGlobalResources : NSObject
+@interface JZGlobalResources : NSObject{
+	JZLocationManager* _locationManager;
+	JZTopHatConnect* _topHatConnect;
 
-@property  (nonatomic, retain) JZOneSecondBlocker* blocker;
-@property  (nonatomic, retain) JZLocationManager* locationManager;
-@property  (nonatomic, retain) JZTopHatConnect* topHatConnect;
+}
 
+@property (nonatomic, retain) JZLocationManager* locationManager;
+@property (nonatomic, retain) JZTopHatConnect* topHatConnect;
+@property (nonatomic, retain) NSManagedObjectContext* managedObjectContext;
+
+
++(JZGlobalResources*)sharedInstance;
 
 @end

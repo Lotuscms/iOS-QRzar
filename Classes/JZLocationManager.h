@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface JZLocationManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>
+@interface JZLocationManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>{
+	CLLocation* _currentLocation;
+	CLLocationManager* _locationManager;
+}
 
-@property (nonatomic, retain) CLLocation* currentLocation;
+@property (nonatomic, strong) CLLocation* currentLocation;
 @property (nonatomic, retain) CLLocationManager* locationManager;
 
 -(double)getLong;

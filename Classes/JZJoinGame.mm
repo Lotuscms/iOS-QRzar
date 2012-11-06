@@ -8,25 +8,33 @@
 
 #import "JZJoinGame.h"
 #import "QRCodeReader.h"
-#import "JZInfoScreen.h"
-#import "JZRank.h"
-#import "JZHUD.h"
+#import "HUDViewController.h"
+#import "JZPlayer.h"
+
+@interface JZJoinGame (PrivateMethods)
+
+-(void)runGameStart;
+-(void)connectAPI;
+
+@end
 
 @implementation JZJoinGame
 
-@synthesize top;
-@synthesize btm, lft, rht;
-@synthesize widController, resources;
+@synthesize widController = _widController;
+@synthesize gameCode = _gameCode;
+
+// Synthesize IBOutlets
+@synthesize gameReadLabel, gameScanButton, playerReadLabel,playerScanButton, joinGameView, cover, startSlider, joinGameButton, senderButton, feedbackLabel, indicator, contactingServer, networkErrorOKButton, networkRefreshButton, refreshState;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        widController = [[ZXingWidgetController alloc] initWithDelegate:self showCancel:YES OneDMode:NO withCrop:CGRectMake(10, 30, 270, 270)];
+        [self setWidController:[[ZXingWidgetController alloc] initWithDelegate:self showCancel:YES OneDMode:NO withCrop:CGRectMake(0, 40, 320, 302)]];
         self.view.backgroundColor= [UIColor clearColor];
-        [self.view addSubview:widController.view];
-        [self.view sendSubviewToBack:widController.view];
-        resources = [[JZGlobalResources alloc] init];
+        [self.view addSubview:[self widController].view];
+        [self.view sendSubviewToBack:[self widController].view];
+		
     }
     return self;
 }
@@ -45,6 +53,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	[playerScanButton setBackgroundImage:[[UIImage imageNamed:@"LaunchButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 60)] forState:UIControlStateNormal];
+	[gameScanButton setBackgroundImage:[[UIImage imageNamed:@"LaunchButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 60)] forState:UIControlStateNormal];
+	[joinGameButton setBackgroundImage:[[UIImage imageNamed:@"LaunchButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 60)] forState:UIControlStateNormal];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+	[super viewDidAppear:animated];
+	[NSThread detachNewThreadSelector:@selector(connectAPI) toTarget:self withObject:NULL];
 }
 
 - (void)viewDidUnload
@@ -60,72 +76,196 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(IBAction)openSliders{
-    [UIView animateWithDuration:0.3
+-(IBAction)slide{
+	[UIView animateWithDuration:0.3
                           delay:0.0
                         options: UIViewAnimationCurveEaseOut
                      animations:^{
-                         top.frame = CGRectMake(0, -153, 320, 153);
-                         btm.frame = CGRectMake(0, 305, 320, 154);
+						 [startSlider setFrame:CGRectMake([startSlider frame].origin.x-320, [startSlider frame].origin.y, [startSlider frame].size.width, [startSlider frame].size.height)];
                      } 
                      completion:^(BOOL finished){}];
-	
-    [UIView animateWithDuration:0.3
-                          delay:0.3
-                        options: UIViewAnimationCurveEaseOut
-                     animations:^{
-                         lft.frame = CGRectMake(-160, 0, 160, 308);
-                         rht.frame = CGRectMake(320, 0, 160, 308);
-                     } 
-                     completion:^(BOOL finished){
-                         QRCodeReader* qrcodeReader = [[QRCodeReader alloc] init];
-                         NSSet *readers = [[NSSet alloc ] initWithObjects:qrcodeReader,nil];
-                         widController.readers = readers;
-                     }];
-    
-    
 }
 
--(IBAction)closeSliders{
-    widController.readers = NULL;
+-(IBAction)startGame:(id)sender{
+	
+	[UIView animateWithDuration:0.3 animations:^(){
+		[joinGameView setFrame:CGRectMake([joinGameView frame].origin.x, [startSlider frame].origin.y, [joinGameView frame].size.width, [joinGameView frame].size.height)];
+		[cover setFrame:CGRectMake([cover frame].origin.x, [joinGameView frame].origin.y-[cover frame].size.height, [cover frame].size.width, [cover frame].size.height)];
+		[startSlider setFrame:CGRectMake([startSlider frame].origin.x+320, [startSlider frame].origin.y, [startSlider frame].size.width, [startSlider frame].size.height)];
+	}];
+	[indicator setHidden:NO];
+	[indicator startAnimating];
+	[contactingServer setText:@"Contacting Server"];
+	[contactingServer setHidden:NO];
+	[networkErrorOKButton setHidden:YES];
+	[NSThread detachNewThreadSelector:@selector(runGameStart) toTarget:self withObject:NULL];
+}
+
+-(void)connectAPI{
+	
+	[networkRefreshButton setHidden:YES];
+	[indicator setHidden:NO];
+	[indicator startAnimating];
+	[contactingServer setText:@"Contacting Server"];
+	[networkErrorOKButton setHidden:YES];
+	
+	if (([JZGlobalResources sharedInstance])!=NULL){
+		[self slide];
+	}else{
+		[indicator setHidden:YES];
+		[networkErrorOKButton setHidden:YES];
+		[networkRefreshButton setHidden:NO];
+		[contactingServer setHidden:NO];
+		[contactingServer setText:@"Could Not Connect To Server"];
+		refreshState = kConnect;
+	}
+}
+
+-(IBAction)refreshNetwork{
+	
+	[indicator setHidden:NO];
+	[indicator startAnimating];
+	[contactingServer setText:@"Contacting Server"];
+	[contactingServer setHidden:NO];
+	[networkErrorOKButton setHidden:YES];
+	[networkRefreshButton setHidden:YES];
+	
+	switch (refreshState) {
+		case kJoin:
+			[NSThread detachNewThreadSelector:@selector(runGameStart) toTarget:self withObject:NULL];
+			break;
+		case kConnect:
+			[NSThread detachNewThreadSelector:@selector(connectAPI) toTarget:self withObject:NULL];
+			break;
+	}
+}
+
+-(void)runGameStart{
+	
+	int retCode = [[[JZGlobalResources sharedInstance] topHatConnect] joinGameWithID:[self gameCode]];
+	
+	switch (retCode) {
+		case 200:
+			[self presentModalViewController:[[HUDViewController alloc] init] animated:NO];
+			break;
+		case 0:
+			[contactingServer setText:@"Empty Response from server"];
+			[networkErrorOKButton setHidden:NO];
+			[indicator setHidden:YES];
+			[networkRefreshButton setHidden:YES];
+			break;
+		case -1:
+			[contactingServer setText:@"Network Connection Failure"];
+			refreshState = kJoin;
+			[networkRefreshButton setHidden:NO];
+			[indicator setHidden:YES];
+			[networkErrorOKButton setHidden:YES];
+			break;
+		case 404:
+			[contactingServer setText:@"Game not found"];
+			[networkErrorOKButton setHidden:NO];
+			[indicator setHidden:YES];
+			[networkRefreshButton setHidden:YES];
+			break;
+		case 409:
+			[contactingServer setText:@"Player already Exists"];
+			[networkErrorOKButton setHidden:NO];
+			[indicator setHidden:YES];
+			[networkRefreshButton setHidden:YES];
+			break;
+		default:
+			[contactingServer setText:[NSString stringWithFormat:@"Connection Error:%i",retCode]];
+			[networkErrorOKButton setHidden:NO];
+			[indicator setHidden:YES];
+			[networkRefreshButton setHidden:YES];
+			break;
+	}
+	
+}
+
+-(IBAction)startScan:(id)sender{
+	
+	senderButton = (ButtonTags)[sender tag];
+	
+	switch (senderButton) {
+		case kJoinGame:
+			
+			break;
+		case kScanGame:
+			feedbackLabel.text = @"Scanning for Game ID.";
+			break;
+		case kScanPlayer:
+			feedbackLabel.text = @"Scanning for Player ID.";
+			break;
+	}
+	
     [UIView animateWithDuration:0.3
                           delay:0.0
                         options: UIViewAnimationCurveEaseOut
                      animations:^{
-                         top.frame = CGRectMake(0, 0, 320, 153);
-                         btm.frame = CGRectMake(0, 151, 320, 154);
-                         lft.frame = CGRectMake(0, 0, 160, 308);
-                         rht.frame = CGRectMake(160, 0, 160, 308);
+						 [joinGameView setFrame:CGRectMake([joinGameView frame].origin.x, [startSlider frame].origin.y, [joinGameView frame].size.width, [joinGameView frame].size.height)];
+						 [cover setFrame:CGRectMake([cover frame].origin.x, 0-[cover frame].size.height, [cover frame].size.width, [cover frame].size.height)];
                      } 
                      completion:^(BOOL finished){
-                     }];
-    
+						 QRCodeReader* qrcodeReader = [[QRCodeReader alloc] init];
+                         NSSet *readers = [[NSSet alloc] initWithObjects:qrcodeReader,nil];
+                         [self widController].readers = readers;
+					 }];
+
+}
+
+-(IBAction)stopScan:(id)sender{
+    [self widController].readers = NULL;
+	if (![playerReadLabel.text isEqualToString:@"Please Scan Player"]&&![gameReadLabel.text isEqualToString:@"Please Scan Game"]) {
+		[UIView animateWithDuration:0.3
+							  delay:0.0
+							options: UIViewAnimationCurveEaseOut
+						 animations:^{
+							 [joinGameView setFrame:CGRectMake([joinGameView frame].origin.x, [startSlider frame].origin.y-[joinGameView frame].size.height-3, [joinGameView frame].size.width, [joinGameView frame].size.height)];
+							 [cover setFrame:CGRectMake([cover frame].origin.x, [joinGameView frame].origin.y-[cover frame].size.height, [cover frame].size.width, [cover frame].size.height)];
+						 } 
+						 completion:^(BOOL finished){
+							 [self widController].readers = nil;
+						 }];
+	}else{
+		[UIView animateWithDuration:0.3
+							  delay:0.0
+							options: UIViewAnimationCurveEaseOut
+						 animations:^{
+							 [cover setFrame:CGRectMake([cover frame].origin.x, [joinGameView frame].origin.y-[cover frame].size.height, [cover frame].size.width, [cover frame].size.height)];
+						 } 
+						 completion:^(BOOL finished){
+							 [self widController].readers = nil;
+						 }];
+	}
 }
 
 - (void)zxingController:(ZXingWidgetController*)controller didScanResult:(JZQRInfo *)result {
-    
-    if(result!=NULL && resources.blocker.check){ 
-        resources.topHatConnect = [[JZTopHatConnect alloc] initWithPlayerID:[result playerID]];
-        if (resources.topHatConnect!=nil) {
-            JZHUD* hud = [[JZHUD alloc] init];
-            [self presentModalViewController:hud animated:NO];
-            self.widController = NULL;
-            [hud passJoinScan:result withResource:resources];
-        }     
-    }
-   
+	switch (senderButton) {
+		case kJoinGame:
+			
+			break;
+		case kScanGame:
+			if ([[result rawResult] intValue]) {
+				[self setGameCode:result.rawResult];
+				[gameReadLabel setText:[NSString stringWithFormat:@"Game ID:%@",result.rawResult]];
+				[self stopScan:nil];
+			}
+			break;
+		case kScanPlayer:
+			if (isupper([result.rawResult characterAtIndex:0])&&[result.rawResult length]==6) {
+				[[JZPlayer sharedInstance] setQrCode:result.rawResult];
+				[playerReadLabel setText:[NSString stringWithFormat:@"Player ID:%@",result.rawResult]];
+				[self stopScan:nil];
+			}
+			
+			break;
+	}
 }
 
 - (void)zxingControllerDidCancel:(ZXingWidgetController*)controller;{
     
 }
 
--(IBAction)info{
-    [self presentModalViewController:[[JZInfoScreen alloc] init] animated:YES];
-}
-
--(IBAction)rank{
-    [self presentModalViewController:[[JZRank alloc] init] animated:YES];
-}
 
 @end

@@ -11,29 +11,12 @@
 
 @interface JZTopHatConnect : NSObject <NSStreamDelegate>
 
-@property (nonatomic, retain) NSString* playerID;
+-(int)joinGameWithID:(NSString*)gameID;
+-(int)revivePlayer:(NSString*)reviveCode;
+-(int)playerHasKilledPlayerWithID:(NSString*)victimID;
 
-@property (nonatomic, retain) NSInputStream*  inputStream;
-@property (nonatomic, retain) NSOutputStream* outputStream;
-
-
-
-- (id)initWithPlayerID:(NSString*)playerID;
-
-
-
-
-// In game calls
-
-
--(BOOL)playerHasKilledPlayerWithID:(NSString*)victimID;
-
--(NSDictionary*)getInGameInfoForPlayerWithLongitude:(double)longitude 
-                                        forLatitude:(double)latitude 
-                                       withAccuracy:(double)accuracy;
-
-
-
--(BOOL)revivePlayer;
+-(int)updateAlive;
+-(int)updateTeamScores;
+-(int)updateLocation;
 
 @end

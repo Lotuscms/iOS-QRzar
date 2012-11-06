@@ -7,17 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B0F290614E46DAB007565C4 /* hudbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290514E46DAB007565C4 /* hudbg.png */; };
-		3B0F290914E46EAD007565C4 /* blueteamBadge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290714E46EAD007565C4 /* blueteamBadge.png */; };
-		3B0F290A14E46EAD007565C4 /* RedTeamBadge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290814E46EAD007565C4 /* RedTeamBadge.png */; };
-		3B0F290D14E4703E007565C4 /* bluescorebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290B14E4703E007565C4 /* bluescorebg.png */; };
-		3B0F290E14E4703E007565C4 /* redscorebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290C14E4703E007565C4 /* redscorebg.png */; };
-		3B0F291014E47691007565C4 /* InGameScanButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F290F14E47691007565C4 /* InGameScanButton.png */; };
-		3B0F291214E47A28007565C4 /* powerupButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F291114E47A28007565C4 /* powerupButton.png */; };
-		3B1A5F4F14EC9D09002A79DC /* bonus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B1A5F4E14EC9D09002A79DC /* bonus.png */; };
 		3B29D6E014EEE7E50033A23F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B29D6DF14EEE7E50033A23F /* CoreLocation.framework */; };
 		3B29D6E414EF31390033A23F /* JZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B29D6E314EF31390033A23F /* JZLocationManager.m */; };
-		3B29D6E714EF38030033A23F /* JZOneSecondBlocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B29D6E614EF38030033A23F /* JZOneSecondBlocker.m */; };
 		3B29D6EA14EFD0850033A23F /* JZGlobalResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B29D6E914EFD0850033A23F /* JZGlobalResources.m */; };
 		3B29D6ED14EFD1120033A23F /* JZTopHatConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B29D6EC14EFD1120033A23F /* JZTopHatConnect.m */; };
 		3B29D73314EFDAC80033A23F /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B29D71B14EFDAC80033A23F /* NSObject+SBJson.m */; };
@@ -37,13 +28,7 @@
 		3B48A93814D5FDD800846AD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B48A93714D5FDD800846AD6 /* CoreGraphics.framework */; };
 		3B48A93E14D5FDD800846AD6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A93C14D5FDD800846AD6 /* InfoPlist.strings */; };
 		3B48A94014D5FDD800846AD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48A93F14D5FDD800846AD6 /* main.m */; };
-		3B48A94B14D5FE6700846AD6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A94A14D5FE6700846AD6 /* Default@2x.png */; };
 		3B48A95014D5FF5000846AD6 /* JZJoinGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */; };
-		3B48A95214D6002300846AD6 /* QRButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95114D6002300846AD6 /* QRButton.png */; };
-		3B48A95814D6009100846AD6 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95314D6009100846AD6 /* Join.png */; };
-		3B48A95914D6009100846AD6 /* Base.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95414D6009100846AD6 /* Base.png */; };
-		3B48A95A14D6009100846AD6 /* topSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95514D6009100846AD6 /* topSlider.png */; };
-		3B48A95B14D6009100846AD6 /* BtmSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48A95614D6009100846AD6 /* BtmSlider.png */; };
 		3B5766BA14E2A80F00C4F15D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766B914E2A80F00C4F15D /* AVFoundation.framework */; };
 		3B5766BC14E2A81600C4F15D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766BB14E2A81600C4F15D /* AudioToolbox.framework */; };
 		3B5766BE14E2A82000C4F15D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766BD14E2A82000C4F15D /* CoreVideo.framework */; };
@@ -52,23 +37,28 @@
 		3B5766C414E2A85100C4F15D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766C314E2A85100C4F15D /* AddressBook.framework */; };
 		3B5766C614E2A85400C4F15D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5766C514E2A85400C4F15D /* AddressBookUI.framework */; };
 		3B63BD2614E2EC0800D24E22 /* JZAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD2514E2EC0800D24E22 /* JZAppDelegate.mm */; };
-		3B63BD3214E311AF00D24E22 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3114E311AE00D24E22 /* filter.png */; };
-		3B63BD3414E453B000D24E22 /* info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3314E453AF00D24E22 /* info-icon.png */; };
-		3B63BD3614E454E600D24E22 /* Info1 .png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3514E454E600D24E22 /* Info1 .png */; };
-		3B63BD3814E457EB00D24E22 /* rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3714E457EB00D24E22 /* rank.png */; };
-		3B63BD3A14E4591A00D24E22 /* Rank_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3914E4591A00D24E22 /* Rank_text.png */; };
-		3B63BD3E14E45E5200D24E22 /* JZInfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD3C14E45E5200D24E22 /* JZInfoScreen.m */; };
-		3B63BD3F14E45E5200D24E22 /* JZInfoScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD3D14E45E5200D24E22 /* JZInfoScreen.xib */; };
-		3B63BD4714E4647300D24E22 /* JZRank.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD4514E4647300D24E22 /* JZRank.m */; };
-		3B63BD4814E4647300D24E22 /* JZRank.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD4614E4647300D24E22 /* JZRank.xib */; };
-		3B63BD4C14E4698C00D24E22 /* JZHUD.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B63BD4A14E4698C00D24E22 /* JZHUD.mm */; };
-		3B63BD4D14E4698C00D24E22 /* JZHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B63BD4B14E4698C00D24E22 /* JZHUD.xib */; };
-		3B65964F14E9C8A300E65071 /* onfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B65964E14E9C8A300E65071 /* onfire.png */; };
-		3BB2500914ED8BD1001066B3 /* powerupbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2500814ED8BD1001066B3 /* powerupbg.png */; };
-		3BB2500B14ED9E59001066B3 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2500A14ED9E59001066B3 /* cogs.png */; };
-		3BB2500D14EDC9AC001066B3 /* trim.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2500C14EDC9AC001066B3 /* trim.png */; };
-		3BB2500F14EDD0BB001066B3 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2500E14EDD0BB001066B3 /* left.png */; };
-		3BB2501114EDD0C3001066B3 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB2501014EDD0C3001066B3 /* right.png */; };
+		3B68147A1645A93200C911DF /* HUDMan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814701645A93200C911DF /* HUDMan@2x.png */; };
+		3B68147B1645A93200C911DF /* HUDMessages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814711645A93200C911DF /* HUDMessages@2x.png */; };
+		3B68147C1645A93200C911DF /* HUDRadar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814721645A93200C911DF /* HUDRadar@2x.png */; };
+		3B68147D1645A93200C911DF /* LaunchBrightBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814731645A93200C911DF /* LaunchBrightBackground.png */; };
+		3B68147E1645A93200C911DF /* LaunchButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814741645A93200C911DF /* LaunchButton@2x.png */; };
+		3B68147F1645A93200C911DF /* LaunchDarkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814751645A93200C911DF /* LaunchDarkBackground.png */; };
+		3B6814801645A93200C911DF /* LaunchQRCode.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814761645A93200C911DF /* LaunchQRCode.png */; };
+		3B6814811645A93200C911DF /* LaunchTopSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814771645A93200C911DF /* LaunchTopSkin.png */; };
+		3B6814821645A93200C911DF /* RanksTableFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814781645A93200C911DF /* RanksTableFrame.png */; };
+		3B6814831645A93200C911DF /* SplashLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814791645A93200C911DF /* SplashLogo.png */; };
+		3B6814851645D5AD00C911DF /* default@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814841645D5AD00C911DF /* default@2x.PNG */; };
+		3B68148916461CFE00C911DF /* HUDViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B68148716461CFD00C911DF /* HUDViewController.mm */; };
+		3B68148A16461CFE00C911DF /* HUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B68148816461CFE00C911DF /* HUDViewController.xib */; };
+		3B68148D1646C88100C911DF /* 01-refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B68148C1646C88100C911DF /* 01-refresh@2x.png */; };
+		3B6814901646ED2F00C911DF /* JZTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68148F1646ED2F00C911DF /* JZTeam.m */; };
+		3B6814931646ED9700C911DF /* JZPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6814921646ED9700C911DF /* JZPlayer.m */; };
+		3B6814961646EDDD00C911DF /* JZGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6814951646EDDD00C911DF /* JZGame.m */; };
+		3B68149916471F9D00C911DF /* BloodSplatter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B68149816471F9D00C911DF /* BloodSplatter.png */; };
+		3B68149B1647221200C911DF /* BloodSplatterClearedAfterPress.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B68149A1647221200C911DF /* BloodSplatterClearedAfterPress.png */; };
+		3B96903C16483BEE007D9606 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B96903A16483BEE007D9606 /* Model.xcdatamodeld */; };
+		3B96903E16485069007D9606 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B96903D16485069007D9606 /* CoreData.framework */; };
+		3B96904516487761007D9606 /* JZManagedObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B96904416487761007D9606 /* JZManagedObjectController.m */; };
 		3BD8D02914EA8D3C00319EEB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD8D02814EA8D3C00319EEB /* appicon.png */; };
 		3BE25FEE14E2AE6B008332DC /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE25FE914E2AE27008332DC /* libZXingWidget.a */; };
 		3BE7478914E2E8DE00EE9C42 /* JZJoinGame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */; };
@@ -99,19 +89,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B0F290514E46DAB007565C4 /* hudbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hudbg.png; path = Images/hudbg.png; sourceTree = "<group>"; };
-		3B0F290714E46EAD007565C4 /* blueteamBadge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueteamBadge.png; path = Images/blueteamBadge.png; sourceTree = "<group>"; };
-		3B0F290814E46EAD007565C4 /* RedTeamBadge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RedTeamBadge.png; path = Images/RedTeamBadge.png; sourceTree = "<group>"; };
-		3B0F290B14E4703E007565C4 /* bluescorebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluescorebg.png; path = Images/bluescorebg.png; sourceTree = "<group>"; };
-		3B0F290C14E4703E007565C4 /* redscorebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redscorebg.png; path = Images/redscorebg.png; sourceTree = "<group>"; };
-		3B0F290F14E47691007565C4 /* InGameScanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = InGameScanButton.png; path = Images/InGameScanButton.png; sourceTree = "<group>"; };
-		3B0F291114E47A28007565C4 /* powerupButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = powerupButton.png; path = Images/powerupButton.png; sourceTree = "<group>"; };
-		3B1A5F4E14EC9D09002A79DC /* bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bonus.png; path = Images/bonus.png; sourceTree = "<group>"; };
 		3B29D6DF14EEE7E50033A23F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3B29D6E214EF31390033A23F /* JZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZLocationManager.h; path = Classes/JZLocationManager.h; sourceTree = SOURCE_ROOT; };
 		3B29D6E314EF31390033A23F /* JZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZLocationManager.m; path = Classes/JZLocationManager.m; sourceTree = SOURCE_ROOT; };
-		3B29D6E514EF38030033A23F /* JZOneSecondBlocker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZOneSecondBlocker.h; path = Classes/JZOneSecondBlocker.h; sourceTree = SOURCE_ROOT; };
-		3B29D6E614EF38030033A23F /* JZOneSecondBlocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZOneSecondBlocker.m; path = Classes/JZOneSecondBlocker.m; sourceTree = SOURCE_ROOT; };
 		3B29D6E814EFD0850033A23F /* JZGlobalResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZGlobalResources.h; path = ../Classes/JZGlobalResources.h; sourceTree = "<group>"; };
 		3B29D6E914EFD0850033A23F /* JZGlobalResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZGlobalResources.m; path = ../Classes/JZGlobalResources.m; sourceTree = "<group>"; };
 		3B29D6EB14EFD1120033A23F /* JZTopHatConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZTopHatConnect.h; path = Classes/JZTopHatConnect.h; sourceTree = SOURCE_ROOT; };
@@ -150,14 +130,8 @@
 		3B48A93F14D5FDD800846AD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
 		3B48A94114D5FDD800846AD6 /* QRZar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QRZar-Prefix.pch"; sourceTree = "<group>"; };
 		3B48A94214D5FDD800846AD6 /* JZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JZAppDelegate.h; path = ../Classes/JZAppDelegate.h; sourceTree = "<group>"; };
-		3B48A94A14D5FE6700846AD6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
 		3B48A94C14D5FF5000846AD6 /* JZJoinGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZJoinGame.h; path = ../Classes/JZJoinGame.h; sourceTree = "<group>"; };
-		3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZJoinGame.xib; path = xib/JZJoinGame.xib; sourceTree = "<group>"; };
-		3B48A95114D6002300846AD6 /* QRButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QRButton.png; path = Images/QRButton.png; sourceTree = "<group>"; };
-		3B48A95314D6009100846AD6 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Join.png; path = Images/Join.png; sourceTree = "<group>"; };
-		3B48A95414D6009100846AD6 /* Base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base.png; path = Images/Base.png; sourceTree = "<group>"; };
-		3B48A95514D6009100846AD6 /* topSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topSlider.png; path = Images/topSlider.png; sourceTree = "<group>"; };
-		3B48A95614D6009100846AD6 /* BtmSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BtmSlider.png; path = Images/BtmSlider.png; sourceTree = "<group>"; };
+		3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZJoinGame.xib; path = ../xib/JZJoinGame.xib; sourceTree = "<group>"; };
 		3B5766B914E2A80F00C4F15D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3B5766BB14E2A81600C4F15D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3B5766BD14E2A82000C4F15D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -166,26 +140,33 @@
 		3B5766C314E2A85100C4F15D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3B5766C514E2A85400C4F15D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3B63BD2514E2EC0800D24E22 /* JZAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = JZAppDelegate.mm; path = ../Classes/JZAppDelegate.mm; sourceTree = "<group>"; };
-		3B63BD3114E311AE00D24E22 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = Images/filter.png; sourceTree = "<group>"; };
-		3B63BD3314E453AF00D24E22 /* info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info-icon.png"; path = "Images/info-icon.png"; sourceTree = "<group>"; };
-		3B63BD3514E454E600D24E22 /* Info1 .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Info1 .png"; path = "Images/Info1 .png"; sourceTree = "<group>"; };
-		3B63BD3714E457EB00D24E22 /* rank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rank.png; path = Images/rank.png; sourceTree = "<group>"; };
-		3B63BD3914E4591A00D24E22 /* Rank_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rank_text.png; path = Images/Rank_text.png; sourceTree = "<group>"; };
-		3B63BD3B14E45E5100D24E22 /* JZInfoScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZInfoScreen.h; path = ../Classes/JZInfoScreen.h; sourceTree = "<group>"; };
-		3B63BD3C14E45E5200D24E22 /* JZInfoScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZInfoScreen.m; path = ../Classes/JZInfoScreen.m; sourceTree = "<group>"; };
-		3B63BD3D14E45E5200D24E22 /* JZInfoScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZInfoScreen.xib; path = xib/JZInfoScreen.xib; sourceTree = "<group>"; };
-		3B63BD4414E4647300D24E22 /* JZRank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZRank.h; path = ../Classes/JZRank.h; sourceTree = "<group>"; };
-		3B63BD4514E4647300D24E22 /* JZRank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZRank.m; path = ../Classes/JZRank.m; sourceTree = "<group>"; };
-		3B63BD4614E4647300D24E22 /* JZRank.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZRank.xib; path = xib/JZRank.xib; sourceTree = "<group>"; };
-		3B63BD4914E4698C00D24E22 /* JZHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZHUD.h; path = ../Classes/JZHUD.h; sourceTree = "<group>"; };
-		3B63BD4A14E4698C00D24E22 /* JZHUD.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = JZHUD.mm; path = ../Classes/JZHUD.mm; sourceTree = "<group>"; usesTabs = 1; };
-		3B63BD4B14E4698C00D24E22 /* JZHUD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JZHUD.xib; path = xib/JZHUD.xib; sourceTree = "<group>"; };
-		3B65964E14E9C8A300E65071 /* onfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onfire.png; path = Images/onfire.png; sourceTree = "<group>"; };
-		3BB2500814ED8BD1001066B3 /* powerupbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = powerupbg.png; path = Images/powerupbg.png; sourceTree = "<group>"; };
-		3BB2500A14ED9E59001066B3 /* cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cogs.png; path = Images/cogs.png; sourceTree = "<group>"; };
-		3BB2500C14EDC9AC001066B3 /* trim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trim.png; path = Images/trim.png; sourceTree = "<group>"; };
-		3BB2500E14EDD0BB001066B3 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = Images/left.png; sourceTree = "<group>"; };
-		3BB2501014EDD0C3001066B3 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right.png; path = Images/right.png; sourceTree = "<group>"; };
+		3B6814701645A93200C911DF /* HUDMan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HUDMan@2x.png"; sourceTree = "<group>"; };
+		3B6814711645A93200C911DF /* HUDMessages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HUDMessages@2x.png"; sourceTree = "<group>"; };
+		3B6814721645A93200C911DF /* HUDRadar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HUDRadar@2x.png"; sourceTree = "<group>"; };
+		3B6814731645A93200C911DF /* LaunchBrightBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchBrightBackground.png; sourceTree = "<group>"; };
+		3B6814741645A93200C911DF /* LaunchButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchButton@2x.png"; sourceTree = "<group>"; };
+		3B6814751645A93200C911DF /* LaunchDarkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchDarkBackground.png; sourceTree = "<group>"; };
+		3B6814761645A93200C911DF /* LaunchQRCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchQRCode.png; sourceTree = "<group>"; };
+		3B6814771645A93200C911DF /* LaunchTopSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchTopSkin.png; sourceTree = "<group>"; };
+		3B6814781645A93200C911DF /* RanksTableFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RanksTableFrame.png; sourceTree = "<group>"; };
+		3B6814791645A93200C911DF /* SplashLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashLogo.png; sourceTree = "<group>"; };
+		3B6814841645D5AD00C911DF /* default@2x.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.PNG"; sourceTree = "<group>"; };
+		3B68148616461CFD00C911DF /* HUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDViewController.h; sourceTree = "<group>"; };
+		3B68148716461CFD00C911DF /* HUDViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HUDViewController.mm; sourceTree = "<group>"; };
+		3B68148816461CFE00C911DF /* HUDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HUDViewController.xib; sourceTree = "<group>"; };
+		3B68148C1646C88100C911DF /* 01-refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh@2x.png"; sourceTree = "<group>"; };
+		3B68148E1646ED2F00C911DF /* JZTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTeam.h; sourceTree = "<group>"; };
+		3B68148F1646ED2F00C911DF /* JZTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTeam.m; sourceTree = "<group>"; };
+		3B6814911646ED9700C911DF /* JZPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZPlayer.h; sourceTree = "<group>"; };
+		3B6814921646ED9700C911DF /* JZPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZPlayer.m; sourceTree = "<group>"; };
+		3B6814941646EDDD00C911DF /* JZGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZGame.h; sourceTree = "<group>"; };
+		3B6814951646EDDD00C911DF /* JZGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZGame.m; sourceTree = "<group>"; };
+		3B68149816471F9D00C911DF /* BloodSplatter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BloodSplatter.png; sourceTree = "<group>"; };
+		3B68149A1647221200C911DF /* BloodSplatterClearedAfterPress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BloodSplatterClearedAfterPress.png; sourceTree = "<group>"; };
+		3B96903B16483BEE007D9606 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3B96903D16485069007D9606 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3B96904316487761007D9606 /* JZManagedObjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZManagedObjectController.h; sourceTree = "<group>"; };
+		3B96904416487761007D9606 /* JZManagedObjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZManagedObjectController.m; sourceTree = "<group>"; };
 		3BD8D02814EA8D3C00319EEB /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = "zxing-2.0/iphone/ZXingWidget/ZXingWidget.xcodeproj"; sourceTree = "<group>"; };
 		3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = JZJoinGame.mm; path = ../Classes/JZJoinGame.mm; sourceTree = "<group>"; };
@@ -196,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B96903E16485069007D9606 /* CoreData.framework in Frameworks */,
 				3B29D6E014EEE7E50033A23F /* CoreLocation.framework in Frameworks */,
 				3BE25FEE14E2AE6B008332DC /* libZXingWidget.a in Frameworks */,
 				3B5766C614E2A85400C4F15D /* AddressBookUI.framework in Frameworks */,
@@ -219,13 +201,12 @@
 			children = (
 				3B29D6E814EFD0850033A23F /* JZGlobalResources.h */,
 				3B29D6E914EFD0850033A23F /* JZGlobalResources.m */,
-				3B29D6EB14EFD1120033A23F /* JZTopHatConnect.h */,
-				3B29D6EC14EFD1120033A23F /* JZTopHatConnect.m */,
-				3B29D6E514EF38030033A23F /* JZOneSecondBlocker.h */,
-				3B29D6E614EF38030033A23F /* JZOneSecondBlocker.m */,
+				3B96904316487761007D9606 /* JZManagedObjectController.h */,
+				3B96904416487761007D9606 /* JZManagedObjectController.m */,
 				3B29D6E214EF31390033A23F /* JZLocationManager.h */,
 				3B29D6E314EF31390033A23F /* JZLocationManager.m */,
-				3B29D71914EFDAC80033A23F /* JSON */,
+				3B29D6EB14EFD1120033A23F /* JZTopHatConnect.h */,
+				3B29D6EC14EFD1120033A23F /* JZTopHatConnect.m */,
 			);
 			name = "Global Resources";
 			sourceTree = "<group>";
@@ -235,10 +216,7 @@
 			children = (
 				3B48A94C14D5FF5000846AD6 /* JZJoinGame.h */,
 				3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */,
-				3B63BD4414E4647300D24E22 /* JZRank.h */,
-				3B63BD4514E4647300D24E22 /* JZRank.m */,
-				3B63BD3B14E45E5100D24E22 /* JZInfoScreen.h */,
-				3B63BD3C14E45E5200D24E22 /* JZInfoScreen.m */,
+				3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */,
 			);
 			name = "Open Screen";
 			sourceTree = "<group>";
@@ -279,7 +257,6 @@
 		3B48A92414D5FDD800846AD6 = {
 			isa = PBXGroup;
 			children = (
-				3BD8D02814EA8D3C00319EEB /* appicon.png */,
 				3B48A93914D5FDD800846AD6 /* Classes */,
 				3B71B84414E29EA500C3EFE8 /* Resources */,
 				3B71B86D14E2A05000C3EFE8 /* Dependancies */,
@@ -300,6 +277,7 @@
 		3B48A93214D5FDD800846AD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B96903D16485069007D9606 /* CoreData.framework */,
 				3B29D6DF14EEE7E50033A23F /* CoreLocation.framework */,
 				3B5766C514E2A85400C4F15D /* AddressBookUI.framework */,
 				3B5766C314E2A85100C4F15D /* AddressBook.framework */,
@@ -320,9 +298,10 @@
 			children = (
 				3B48A94214D5FDD800846AD6 /* JZAppDelegate.h */,
 				3B63BD2514E2EC0800D24E22 /* JZAppDelegate.mm */,
-				3B63BD4914E4698C00D24E22 /* JZHUD.h */,
-				3B63BD4A14E4698C00D24E22 /* JZHUD.mm */,
+				3B68148B16461D0300C911DF /* HUD */,
 				3B29D6EF14EFD15A0033A23F /* Open Screen */,
+				3B68149716471B6800C911DF /* Player Object */,
+				3B29D71914EFDAC80033A23F /* JSON */,
 				3B29D6EE14EFD1260033A23F /* Global Resources */,
 			);
 			name = Classes;
@@ -341,14 +320,34 @@
 			path = QRZar;
 			sourceTree = "<group>";
 		};
+		3B68148B16461D0300C911DF /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				3B68148616461CFD00C911DF /* HUDViewController.h */,
+				3B68148716461CFD00C911DF /* HUDViewController.mm */,
+				3B68148816461CFE00C911DF /* HUDViewController.xib */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		3B68149716471B6800C911DF /* Player Object */ = {
+			isa = PBXGroup;
+			children = (
+				3B6814911646ED9700C911DF /* JZPlayer.h */,
+				3B6814921646ED9700C911DF /* JZPlayer.m */,
+				3B6814941646EDDD00C911DF /* JZGame.h */,
+				3B6814951646EDDD00C911DF /* JZGame.m */,
+				3B68148E1646ED2F00C911DF /* JZTeam.h */,
+				3B68148F1646ED2F00C911DF /* JZTeam.m */,
+			);
+			name = "Player Object";
+			sourceTree = "<group>";
+		};
 		3B71B84414E29EA500C3EFE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3B96903A16483BEE007D9606 /* Model.xcdatamodeld */,
 				3BDA36A014E54F3B00944B4D /* Images */,
-				3B48A94E14D5FF5000846AD6 /* JZJoinGame.xib */,
-				3B63BD3D14E45E5200D24E22 /* JZInfoScreen.xib */,
-				3B63BD4614E4647300D24E22 /* JZRank.xib */,
-				3B63BD4B14E4698C00D24E22 /* JZHUD.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -364,31 +363,21 @@
 		3BDA36A014E54F3B00944B4D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3B65964E14E9C8A300E65071 /* onfire.png */,
-				3B63BD3114E311AE00D24E22 /* filter.png */,
-				3B48A94A14D5FE6700846AD6 /* Default@2x.png */,
-				3B1A5F4E14EC9D09002A79DC /* bonus.png */,
-				3B48A95114D6002300846AD6 /* QRButton.png */,
-				3BB2500E14EDD0BB001066B3 /* left.png */,
-				3B0F290B14E4703E007565C4 /* bluescorebg.png */,
-				3BB2500C14EDC9AC001066B3 /* trim.png */,
-				3B0F291114E47A28007565C4 /* powerupButton.png */,
-				3B0F290C14E4703E007565C4 /* redscorebg.png */,
-				3BB2500814ED8BD1001066B3 /* powerupbg.png */,
-				3B0F290514E46DAB007565C4 /* hudbg.png */,
-				3BB2501014EDD0C3001066B3 /* right.png */,
-				3B0F290F14E47691007565C4 /* InGameScanButton.png */,
-				3B63BD3314E453AF00D24E22 /* info-icon.png */,
-				3B0F290714E46EAD007565C4 /* blueteamBadge.png */,
-				3B0F290814E46EAD007565C4 /* RedTeamBadge.png */,
-				3BB2500A14ED9E59001066B3 /* cogs.png */,
-				3B63BD3914E4591A00D24E22 /* Rank_text.png */,
-				3B48A95314D6009100846AD6 /* Join.png */,
-				3B48A95414D6009100846AD6 /* Base.png */,
-				3B63BD3714E457EB00D24E22 /* rank.png */,
-				3B63BD3514E454E600D24E22 /* Info1 .png */,
-				3B48A95514D6009100846AD6 /* topSlider.png */,
-				3B48A95614D6009100846AD6 /* BtmSlider.png */,
+				3B68149816471F9D00C911DF /* BloodSplatter.png */,
+				3B68149A1647221200C911DF /* BloodSplatterClearedAfterPress.png */,
+				3BD8D02814EA8D3C00319EEB /* appicon.png */,
+				3B6814841645D5AD00C911DF /* default@2x.PNG */,
+				3B6814701645A93200C911DF /* HUDMan@2x.png */,
+				3B68148C1646C88100C911DF /* 01-refresh@2x.png */,
+				3B6814711645A93200C911DF /* HUDMessages@2x.png */,
+				3B6814721645A93200C911DF /* HUDRadar@2x.png */,
+				3B6814731645A93200C911DF /* LaunchBrightBackground.png */,
+				3B6814741645A93200C911DF /* LaunchButton@2x.png */,
+				3B6814751645A93200C911DF /* LaunchDarkBackground.png */,
+				3B6814761645A93200C911DF /* LaunchQRCode.png */,
+				3B6814771645A93200C911DF /* LaunchTopSkin.png */,
+				3B6814781645A93200C911DF /* RanksTableFrame.png */,
+				3B6814791645A93200C911DF /* SplashLogo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -477,36 +466,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B48A93E14D5FDD800846AD6 /* InfoPlist.strings in Resources */,
-				3B48A94B14D5FE6700846AD6 /* Default@2x.png in Resources */,
 				3B48A95014D5FF5000846AD6 /* JZJoinGame.xib in Resources */,
-				3B48A95214D6002300846AD6 /* QRButton.png in Resources */,
-				3B48A95814D6009100846AD6 /* Join.png in Resources */,
-				3B48A95914D6009100846AD6 /* Base.png in Resources */,
-				3B48A95A14D6009100846AD6 /* topSlider.png in Resources */,
-				3B48A95B14D6009100846AD6 /* BtmSlider.png in Resources */,
-				3B63BD3214E311AF00D24E22 /* filter.png in Resources */,
-				3B63BD3414E453B000D24E22 /* info-icon.png in Resources */,
-				3B63BD3614E454E600D24E22 /* Info1 .png in Resources */,
-				3B63BD3814E457EB00D24E22 /* rank.png in Resources */,
-				3B63BD3A14E4591A00D24E22 /* Rank_text.png in Resources */,
-				3B63BD3F14E45E5200D24E22 /* JZInfoScreen.xib in Resources */,
-				3B63BD4814E4647300D24E22 /* JZRank.xib in Resources */,
-				3B63BD4D14E4698C00D24E22 /* JZHUD.xib in Resources */,
-				3B0F290614E46DAB007565C4 /* hudbg.png in Resources */,
-				3B0F290914E46EAD007565C4 /* blueteamBadge.png in Resources */,
-				3B0F290A14E46EAD007565C4 /* RedTeamBadge.png in Resources */,
-				3B0F290D14E4703E007565C4 /* bluescorebg.png in Resources */,
-				3B0F290E14E4703E007565C4 /* redscorebg.png in Resources */,
-				3B0F291014E47691007565C4 /* InGameScanButton.png in Resources */,
-				3B0F291214E47A28007565C4 /* powerupButton.png in Resources */,
-				3B65964F14E9C8A300E65071 /* onfire.png in Resources */,
 				3BD8D02914EA8D3C00319EEB /* appicon.png in Resources */,
-				3B1A5F4F14EC9D09002A79DC /* bonus.png in Resources */,
-				3BB2500914ED8BD1001066B3 /* powerupbg.png in Resources */,
-				3BB2500B14ED9E59001066B3 /* cogs.png in Resources */,
-				3BB2500D14EDC9AC001066B3 /* trim.png in Resources */,
-				3BB2500F14EDD0BB001066B3 /* left.png in Resources */,
-				3BB2501114EDD0C3001066B3 /* right.png in Resources */,
+				3B68147A1645A93200C911DF /* HUDMan@2x.png in Resources */,
+				3B68147B1645A93200C911DF /* HUDMessages@2x.png in Resources */,
+				3B68147C1645A93200C911DF /* HUDRadar@2x.png in Resources */,
+				3B68147D1645A93200C911DF /* LaunchBrightBackground.png in Resources */,
+				3B68147E1645A93200C911DF /* LaunchButton@2x.png in Resources */,
+				3B68147F1645A93200C911DF /* LaunchDarkBackground.png in Resources */,
+				3B6814801645A93200C911DF /* LaunchQRCode.png in Resources */,
+				3B6814811645A93200C911DF /* LaunchTopSkin.png in Resources */,
+				3B6814821645A93200C911DF /* RanksTableFrame.png in Resources */,
+				3B6814831645A93200C911DF /* SplashLogo.png in Resources */,
+				3B6814851645D5AD00C911DF /* default@2x.PNG in Resources */,
+				3B68148A16461CFE00C911DF /* HUDViewController.xib in Resources */,
+				3B68148D1646C88100C911DF /* 01-refresh@2x.png in Resources */,
+				3B68149916471F9D00C911DF /* BloodSplatter.png in Resources */,
+				3B68149B1647221200C911DF /* BloodSplatterClearedAfterPress.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,11 +496,7 @@
 				3B48A94014D5FDD800846AD6 /* main.m in Sources */,
 				3BE7478914E2E8DE00EE9C42 /* JZJoinGame.mm in Sources */,
 				3B63BD2614E2EC0800D24E22 /* JZAppDelegate.mm in Sources */,
-				3B63BD3E14E45E5200D24E22 /* JZInfoScreen.m in Sources */,
-				3B63BD4714E4647300D24E22 /* JZRank.m in Sources */,
-				3B63BD4C14E4698C00D24E22 /* JZHUD.mm in Sources */,
 				3B29D6E414EF31390033A23F /* JZLocationManager.m in Sources */,
-				3B29D6E714EF38030033A23F /* JZOneSecondBlocker.m in Sources */,
 				3B29D6EA14EFD0850033A23F /* JZGlobalResources.m in Sources */,
 				3B29D6ED14EFD1120033A23F /* JZTopHatConnect.m in Sources */,
 				3B29D73314EFDAC80033A23F /* NSObject+SBJson.m in Sources */,
@@ -539,6 +511,12 @@
 				3B29D73C14EFDAC80033A23F /* SBJsonTokeniser.m in Sources */,
 				3B29D73D14EFDAC80033A23F /* SBJsonUTF8Stream.m in Sources */,
 				3B29D73E14EFDAC80033A23F /* SBJsonWriter.m in Sources */,
+				3B68148916461CFE00C911DF /* HUDViewController.mm in Sources */,
+				3B6814901646ED2F00C911DF /* JZTeam.m in Sources */,
+				3B6814931646ED9700C911DF /* JZPlayer.m in Sources */,
+				3B6814961646EDDD00C911DF /* JZGame.m in Sources */,
+				3B96903C16483BEE007D9606 /* Model.xcdatamodeld in Sources */,
+				3B96904516487761007D9606 /* JZManagedObjectController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +644,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B96903A16483BEE007D9606 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B96903B16483BEE007D9606 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3B96903B16483BEE007D9606 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = QRZar/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3B48A92614D5FDD800846AD6 /* Project object */;
 }

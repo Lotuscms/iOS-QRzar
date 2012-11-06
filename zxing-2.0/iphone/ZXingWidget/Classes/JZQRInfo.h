@@ -9,16 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface JZQRInfo : NSObject {
-    char team;
-    NSString* gameID;
-    NSString* playerID;
+
+	NSString* _rawResult;
     
 }
 
 -(id)init:(NSString*)str;
 
-@property (nonatomic) char team;
-@property (nonatomic,retain) NSString* gameID;
-@property (nonatomic,retain) NSString* playerID;
+@property (nonatomic, retain) NSString* rawResult;
 
 @end
