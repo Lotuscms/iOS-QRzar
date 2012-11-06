@@ -4,12 +4,13 @@
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="gameID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="playerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="User" syncable="YES">
         <attribute name="apiToken" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Game" positionX="178" positionY="-81" width="128" height="105"/>
         <element name="User" positionX="108" positionY="-0" width="128" height="60"/>
-        <element name="Game" positionX="178" positionY="-81" width="128" height="90"/>
     </elements>
 </model>

@@ -16,7 +16,8 @@ typedef enum{
 	
 	kScanGame,
 	kScanPlayer,
-	kJoinGame
+	kJoinGame,
+	kResumeGame
 
 }ButtonTags;
 
@@ -30,6 +31,7 @@ typedef enum{
 @interface JZJoinGame : UIViewController <ZXingDelegate, UIAlertViewDelegate>{
     ZXingWidgetController *_widController;
 	NSString* _gameCode;
+	NSString* _qrCode;
 	
 }
 
@@ -42,14 +44,18 @@ typedef enum{
 @property (nonatomic, retain) IBOutlet UIView* joinGameView;
 @property (nonatomic, retain) IBOutlet UIView* startSlider;
 @property (nonatomic, retain) IBOutlet UIButton* joinGameButton;
+@property (nonatomic, retain) IBOutlet UIView* resumeGameView;
+@property (nonatomic, retain) IBOutlet UIButton* resumeGameButton;
 @property (nonatomic, retain) IBOutlet UILabel* feedbackLabel;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* indicator;
 @property (nonatomic, retain) IBOutlet UILabel* contactingServer;
 @property (nonatomic, retain) IBOutlet UIButton* networkErrorOKButton;
 @property (nonatomic, retain) IBOutlet UIButton* networkRefreshButton;
+@property (nonatomic, retain) IBOutlet UIImageView* lowerBackground;
 @property					  ButtonTags senderButton;
 @property					  RefreshState refreshState;
 @property (nonatomic, retain) NSString* gameCode;
+@property (nonatomic, retain) NSString* qrCode;
 
 -(IBAction)startScan:(id)sender;
 -(IBAction)stopScan:(id)sender;

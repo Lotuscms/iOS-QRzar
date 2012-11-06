@@ -97,7 +97,10 @@ static JZManagedObjectController* singleton = nil;
 }
 
 -(BOOL)isGameOver{
-	
+	if ([self endTime] == nil) {
+		return true;
+	}
+	NSLog(@"endtime:%@",[[self game] valueForKey:@"endTime"]);
 	return [(NSDate*)[[self game] valueForKey:@"endTime"] compare:[NSDate date]]==NSOrderedAscending;
 }
 
@@ -110,6 +113,14 @@ static JZManagedObjectController* singleton = nil;
 -(NSString*)apiToken{
 	
 	return [[self user] valueForKey:@"apiToken"];
+}
+
+-(void)setTeamID:(NSNumber*)teamID{
+	[[self game] setValue:teamID forKey:@"teamID"];
+}
+
+-(NSNumber*)teamID{
+	return [[self game] valueForKey:@"teamID"];
 }
 
 -(NSManagedObjectContext*)managedObjectContext{

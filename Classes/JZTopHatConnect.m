@@ -82,14 +82,44 @@ NSString* server = @"http://www.arboroia.com:443/";
 	
 }
 
+-(int)resumeStoredGame{
+	NSError* err = nil;
+	
+	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@games/%@?apitoken=%@&depth=3", server,[[JZManagedObjectController sharedInstance] gameID],[[JZPlayer sharedInstance] apiToken]] 
+														 method:@"GET" 
+														   body:NULL 
+														  error:&err
+													withTimeOut:10
+								 ];
+	
+	if (!err&&![json valueForKey:@"error_code"]) {
+		
+		NSLog(@"%@",[json JSONRepresentation]);
+		
+		[[JZPlayer sharedInstance] setPlayerID:[[JZManagedObjectController sharedInstance] playerID]];
+		
+		[[JZPlayer sharedInstance] setGame:[[JZGame alloc] initWithDictionary:(NSDictionary*)json]];
+		
+		NSArray* teams = [[[JZPlayer sharedInstance] game] teams];
+		
+		for (int i = 0; i<[teams count]; i++) {
+			if ([[[JZManagedObjectController sharedInstance] teamID] intValue]==[(JZTeam*)[teams objectAtIndex:i] teamID]) {
+				[[JZPlayer sharedInstance] setTeam:[teams objectAtIndex:i]];
+			}
+		}
+		[self updateTeamScores];
+		[self updateAlive];
+	}
+	return [self errorHandlerWithResponse:json error:err];
+}
 
--(int)joinGameWithID:(NSString *)gameID{
+-(int)joinGameWithID:(NSString *)gameID andQRCode:(NSString *)qrCode{
 	
 	NSError* err = nil;
 	
 	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@players/?apitoken=%@&depth=4", server,[[JZPlayer sharedInstance] apiToken]] 
 														 method:@"POST" 
-														   body:[NSString stringWithFormat:@"data={\"name\":\"%@\",\"game\":{\"id\":\"%@\"},\"qrcode\":\"%@\"}",[[JZPlayer sharedInstance] name], gameID, [[JZPlayer sharedInstance] qrCode]] 
+														   body:[NSString stringWithFormat:@"data={\"name\":\"%@\",\"game\":{\"id\":\"%@\"},\"qrcode\":\"%@\"}",[[JZPlayer sharedInstance] name], gameID, qrCode] 
 														  error:&err
 													withTimeOut:10
 								 ];
@@ -103,8 +133,10 @@ NSString* server = @"http://www.arboroia.com:443/";
 		
 		NSArray* teams = [[[JZPlayer sharedInstance] game] teams];
 		
+		[[JZManagedObjectController sharedInstance] setTeamID:[[json valueForKey:@"team"] valueForKey:@"id"]];
+		
 		for (int i = 0; i<[teams count]; i++) {
-			if ([[[json valueForKey:@"team"] valueForKey:@"id"] intValue]==[[teams objectAtIndex:i] teamID]) {
+			if ([[[json valueForKey:@"team"] valueForKey:@"id"] intValue]==[(JZTeam*)[teams objectAtIndex:i] teamID]) {
 				[[JZPlayer sharedInstance] setTeam:[teams objectAtIndex:i]];
 			}
 		}

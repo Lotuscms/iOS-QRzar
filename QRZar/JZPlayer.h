@@ -13,7 +13,6 @@
 
 @interface JZPlayer : NSObject{
 	NSString* _name;
-	NSString* _qrCode;
 	JZTeam* _team;
 	NSString* _apiToken;
 	NSString* _playerID;
@@ -22,7 +21,6 @@
 }
 
 @property (nonatomic, retain) NSString* name;
-@property (nonatomic, retain) NSString* qrCode;
 @property (nonatomic, retain) NSString* apiToken;
 @property (nonatomic, retain) NSString* playerID;
 @property (nonatomic, retain) JZTeam* team;

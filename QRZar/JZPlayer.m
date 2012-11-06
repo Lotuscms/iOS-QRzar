@@ -16,7 +16,6 @@ static JZPlayer* singleton = nil;
 @synthesize team = _team;
 @synthesize playerID = _playerID;
 @synthesize name = _name;
-@synthesize qrCode = _qrCode;
 @synthesize apiToken = _apiToken;
 @synthesize game = _game;
 @synthesize alive = _alive;
@@ -37,6 +36,11 @@ static JZPlayer* singleton = nil;
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"Alive Change" object:self];
 	}
 	
+}
+
+-(void)setPlayerID:(NSString *)playerID{
+	_playerID = playerID;
+	[[JZManagedObjectController sharedInstance] setPlayerID:playerID];
 }
 
 -(void)setApiToken:(NSString *)apiToken{

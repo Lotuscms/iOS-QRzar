@@ -24,6 +24,7 @@
 	if (self) {
 		[self setStarted:(BOOL)[dictionary objectForKey:@"started"]];
 		[self setGameID:[(NSNumber*)[dictionary objectForKey:@"id"] stringValue]];
+		[[JZManagedObjectController sharedInstance] setGameID:[(NSNumber*)[dictionary objectForKey:@"id"] stringValue]];
 		[self setGameName:[dictionary objectForKey:@"name"]];
 		
 		NSString* endTime = [dictionary objectForKey:@"end_time"];
@@ -32,6 +33,7 @@
 		[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 		[dateFormatter setLocale:[NSLocale systemLocale]];
 		[self setEndTime:[dateFormatter dateFromString:endTime]];
+		[[JZManagedObjectController sharedInstance] setGameEndTime:[dateFormatter dateFromString:endTime]];
 		
 		NSMutableArray* teamObjects = [[NSMutableArray alloc] initWithCapacity:2];
 		NSArray* teams = [dictionary objectForKey:@"teams"];

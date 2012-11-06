@@ -31,6 +31,9 @@
 -(void)setPlayerID:(NSString*)playerID;
 -(NSString*)playerID;
 
+-(void)setTeamID:(NSNumber*)teamID;
+-(NSNumber*)teamID;
+
 -(void)setGameEndTime:(NSDate*)endTime;
 -(NSDate*)endTime;
 -(BOOL)isGameOver;

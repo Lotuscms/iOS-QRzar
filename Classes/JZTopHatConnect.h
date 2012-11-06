@@ -11,7 +11,8 @@
 
 @interface JZTopHatConnect : NSObject <NSStreamDelegate>
 
--(int)joinGameWithID:(NSString*)gameID;
+-(int)joinGameWithID:(NSString*)gameID andQRCode:(NSString*)qrCode;
+-(int)resumeStoredGame;
 -(int)revivePlayer:(NSString*)reviveCode;
 -(int)playerHasKilledPlayerWithID:(NSString*)victimID;
 
