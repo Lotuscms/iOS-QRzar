@@ -120,9 +120,11 @@
 -(IBAction)startGame:(id)sender{
 	
 	[UIView animateWithDuration:0.3 animations:^(){
-		[joinGameView setFrame:CGRectMake([joinGameView frame].origin.x, [startSlider frame].origin.y, [joinGameView frame].size.width, [joinGameView frame].size.height)];
-		[cover setFrame:CGRectMake([cover frame].origin.x, [joinGameView frame].origin.y-[cover frame].size.height, [cover frame].size.width, [cover frame].size.height)];
 		[startSlider setFrame:CGRectMake([startSlider frame].origin.x+320, [startSlider frame].origin.y, [startSlider frame].size.width, [startSlider frame].size.height)];
+		[resumeGameView setFrame:CGRectMake([resumeGameView frame].origin.x, [startSlider    frame].origin.y, [resumeGameView frame].size.width, [resumeGameView frame].size.height)];
+		[joinGameView   setFrame:CGRectMake([joinGameView   frame].origin.x, [resumeGameView frame].origin.y, [joinGameView   frame].size.width, [joinGameView   frame].size.height)];
+		[cover          setFrame:CGRectMake([cover          frame].origin.x, [joinGameView   frame].origin.y-[cover          frame].size.height  , [cover          frame].size.width, [cover          frame].size.height)];
+		[lowerBackground setFrame:CGRectMake([lowerBackground frame].origin.x, [joinGameView frame].origin.y-3, [lowerBackground frame].size.width, 480-[joinGameView frame].origin.y+3)];
 	}];
 	[indicator setHidden:NO];
 	[indicator startAnimating];
@@ -207,6 +209,11 @@
 			[indicator setHidden:YES];
 			[networkRefreshButton setHidden:YES];
 			break;
+		case 400:
+			[contactingServer setText:@"Not a valid Player ID"];
+			[networkErrorOKButton setHidden:NO];
+			[indicator setHidden:YES];
+			[networkRefreshButton setHidden:YES];
 		default:
 			[contactingServer setText:[NSString stringWithFormat:@"Connection Error:%i",retCode]];
 			[networkErrorOKButton setHidden:NO];

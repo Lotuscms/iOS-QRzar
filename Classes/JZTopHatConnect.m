@@ -85,7 +85,7 @@ NSString* server = @"http://www.arboroia.com:443/";
 -(int)resumeStoredGame{
 	NSError* err = nil;
 	
-	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@games/%@?apitoken=%@&depth=3", server,[[JZManagedObjectController sharedInstance] gameID],[[JZPlayer sharedInstance] apiToken]] 
+	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@games/%@?apitoken=%@&depth=4", server,[[JZManagedObjectController sharedInstance] gameID],[[JZPlayer sharedInstance] apiToken]] 
 														 method:@"GET" 
 														   body:NULL 
 														  error:&err
@@ -117,7 +117,7 @@ NSString* server = @"http://www.arboroia.com:443/";
 	
 	NSError* err = nil;
 	
-	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@players/?apitoken=%@&depth=4", server,[[JZPlayer sharedInstance] apiToken]] 
+	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@players/?apitoken=%@&depth=1", server,[[JZPlayer sharedInstance] apiToken]] 
 														 method:@"POST" 
 														   body:[NSString stringWithFormat:@"data={\"name\":\"%@\",\"game\":{\"id\":\"%@\"},\"qrcode\":\"%@\"}",[[JZPlayer sharedInstance] name], gameID, qrCode] 
 														  error:&err

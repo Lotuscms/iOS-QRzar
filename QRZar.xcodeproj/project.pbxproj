@@ -42,7 +42,7 @@
 		3B68147C1645A93200C911DF /* HUDRadar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814721645A93200C911DF /* HUDRadar@2x.png */; };
 		3B68147D1645A93200C911DF /* LaunchBrightBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814731645A93200C911DF /* LaunchBrightBackground.png */; };
 		3B68147E1645A93200C911DF /* LaunchButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814741645A93200C911DF /* LaunchButton@2x.png */; };
-		3B68147F1645A93200C911DF /* LaunchDarkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814751645A93200C911DF /* LaunchDarkBackground.png */; };
+		3B68147F1645A93200C911DF /* LaunchDarkBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814751645A93200C911DF /* LaunchDarkBackground@2x.png */; };
 		3B6814801645A93200C911DF /* LaunchQRCode.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814761645A93200C911DF /* LaunchQRCode.png */; };
 		3B6814811645A93200C911DF /* LaunchTopSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814771645A93200C911DF /* LaunchTopSkin.png */; };
 		3B6814821645A93200C911DF /* RanksTableFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6814781645A93200C911DF /* RanksTableFrame.png */; };
@@ -60,6 +60,9 @@
 		3B96903E16485069007D9606 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B96903D16485069007D9606 /* CoreData.framework */; };
 		3B96904516487761007D9606 /* JZManagedObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B96904416487761007D9606 /* JZManagedObjectController.m */; };
 		3BD8D02914EA8D3C00319EEB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD8D02814EA8D3C00319EEB /* appicon.png */; };
+		3BDA9CD4164992C4008E7459 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA9CD2164992C4008E7459 /* RankingViewController.m */; };
+		3BDA9CD5164992C4008E7459 /* RankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA9CD3164992C4008E7459 /* RankingViewController.xib */; };
+		3BDA9CD81649B869008E7459 /* JZGamePlayers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA9CD71649B869008E7459 /* JZGamePlayers.m */; };
 		3BE25FEE14E2AE6B008332DC /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE25FE914E2AE27008332DC /* libZXingWidget.a */; };
 		3BE7478914E2E8DE00EE9C42 /* JZJoinGame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */; };
 /* End PBXBuildFile section */
@@ -145,7 +148,7 @@
 		3B6814721645A93200C911DF /* HUDRadar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HUDRadar@2x.png"; sourceTree = "<group>"; };
 		3B6814731645A93200C911DF /* LaunchBrightBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchBrightBackground.png; sourceTree = "<group>"; };
 		3B6814741645A93200C911DF /* LaunchButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchButton@2x.png"; sourceTree = "<group>"; };
-		3B6814751645A93200C911DF /* LaunchDarkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchDarkBackground.png; sourceTree = "<group>"; };
+		3B6814751645A93200C911DF /* LaunchDarkBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchDarkBackground@2x.png"; sourceTree = "<group>"; };
 		3B6814761645A93200C911DF /* LaunchQRCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchQRCode.png; sourceTree = "<group>"; };
 		3B6814771645A93200C911DF /* LaunchTopSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchTopSkin.png; sourceTree = "<group>"; };
 		3B6814781645A93200C911DF /* RanksTableFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RanksTableFrame.png; sourceTree = "<group>"; };
@@ -168,6 +171,11 @@
 		3B96904316487761007D9606 /* JZManagedObjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZManagedObjectController.h; sourceTree = "<group>"; };
 		3B96904416487761007D9606 /* JZManagedObjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZManagedObjectController.m; sourceTree = "<group>"; };
 		3BD8D02814EA8D3C00319EEB /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
+		3BDA9CD1164992C4008E7459 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
+		3BDA9CD2164992C4008E7459 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
+		3BDA9CD3164992C4008E7459 /* RankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingViewController.xib; sourceTree = "<group>"; };
+		3BDA9CD61649B869008E7459 /* JZGamePlayers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZGamePlayers.h; sourceTree = "<group>"; };
+		3BDA9CD71649B869008E7459 /* JZGamePlayers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZGamePlayers.m; sourceTree = "<group>"; };
 		3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = "zxing-2.0/iphone/ZXingWidget/ZXingWidget.xcodeproj"; sourceTree = "<group>"; };
 		3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = JZJoinGame.mm; path = ../Classes/JZJoinGame.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,6 +331,9 @@
 		3B68148B16461D0300C911DF /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				3BDA9CD1164992C4008E7459 /* RankingViewController.h */,
+				3BDA9CD2164992C4008E7459 /* RankingViewController.m */,
+				3BDA9CD3164992C4008E7459 /* RankingViewController.xib */,
 				3B68148616461CFD00C911DF /* HUDViewController.h */,
 				3B68148716461CFD00C911DF /* HUDViewController.mm */,
 				3B68148816461CFE00C911DF /* HUDViewController.xib */,
@@ -337,6 +348,8 @@
 				3B6814921646ED9700C911DF /* JZPlayer.m */,
 				3B6814941646EDDD00C911DF /* JZGame.h */,
 				3B6814951646EDDD00C911DF /* JZGame.m */,
+				3BDA9CD61649B869008E7459 /* JZGamePlayers.h */,
+				3BDA9CD71649B869008E7459 /* JZGamePlayers.m */,
 				3B68148E1646ED2F00C911DF /* JZTeam.h */,
 				3B68148F1646ED2F00C911DF /* JZTeam.m */,
 			);
@@ -373,7 +386,7 @@
 				3B6814721645A93200C911DF /* HUDRadar@2x.png */,
 				3B6814731645A93200C911DF /* LaunchBrightBackground.png */,
 				3B6814741645A93200C911DF /* LaunchButton@2x.png */,
-				3B6814751645A93200C911DF /* LaunchDarkBackground.png */,
+				3B6814751645A93200C911DF /* LaunchDarkBackground@2x.png */,
 				3B6814761645A93200C911DF /* LaunchQRCode.png */,
 				3B6814771645A93200C911DF /* LaunchTopSkin.png */,
 				3B6814781645A93200C911DF /* RanksTableFrame.png */,
@@ -473,7 +486,7 @@
 				3B68147C1645A93200C911DF /* HUDRadar@2x.png in Resources */,
 				3B68147D1645A93200C911DF /* LaunchBrightBackground.png in Resources */,
 				3B68147E1645A93200C911DF /* LaunchButton@2x.png in Resources */,
-				3B68147F1645A93200C911DF /* LaunchDarkBackground.png in Resources */,
+				3B68147F1645A93200C911DF /* LaunchDarkBackground@2x.png in Resources */,
 				3B6814801645A93200C911DF /* LaunchQRCode.png in Resources */,
 				3B6814811645A93200C911DF /* LaunchTopSkin.png in Resources */,
 				3B6814821645A93200C911DF /* RanksTableFrame.png in Resources */,
@@ -483,6 +496,7 @@
 				3B68148D1646C88100C911DF /* 01-refresh@2x.png in Resources */,
 				3B68149916471F9D00C911DF /* BloodSplatter.png in Resources */,
 				3B68149B1647221200C911DF /* BloodSplatterClearedAfterPress.png in Resources */,
+				3BDA9CD5164992C4008E7459 /* RankingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +531,8 @@
 				3B6814961646EDDD00C911DF /* JZGame.m in Sources */,
 				3B96903C16483BEE007D9606 /* Model.xcdatamodeld in Sources */,
 				3B96904516487761007D9606 /* JZManagedObjectController.m in Sources */,
+				3BDA9CD4164992C4008E7459 /* RankingViewController.m in Sources */,
+				3BDA9CD81649B869008E7459 /* JZGamePlayers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

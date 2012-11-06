@@ -38,4 +38,6 @@
 
 -(IBAction)stopScan;
 
+-(IBAction)showRankings;
+
 @end

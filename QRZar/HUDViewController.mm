@@ -10,6 +10,9 @@
 #import "JZPlayer.h"
 #import "QRCodeReader.h"
 #import "JZGlobalResources.h"
+#import "RankingViewController.h"
+
+
 
 @interface HUDViewController (PrivateMethods) 
 
@@ -186,6 +189,24 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+-(IBAction)showRankings{
+	RankingViewController* rankingView = [[RankingViewController alloc] initWithStyle:UITableViewStylePlain];
+	
+	UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:rankingView];
+
+	[[navigationController navigationBar] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+																  [UIFont fontWithName:@"GillSans-Bold" size:20],UITextAttributeFont, 
+																  [UIColor colorWithRed:0.98 green:0.85 blue:0.65 alpha:1.00], UITextAttributeTextColor, 
+																  nil]];
+	
+	[[navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.14 green:0.10 blue:0.00 alpha:1.00]];
+	
+	
+	
+	[self presentModalViewController:navigationController animated:YES];
+	
 }
 
 #pragma mark - View lifecycle

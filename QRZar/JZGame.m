@@ -17,11 +17,13 @@
 @synthesize endTime = _endTime;
 @synthesize started = _started;
 @synthesize gameName = _gameName;
+@synthesize players = _players;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary{
 	
 	self = [super init];
 	if (self) {
+		
 		[self setStarted:(BOOL)[dictionary objectForKey:@"started"]];
 		[self setGameID:[(NSNumber*)[dictionary objectForKey:@"id"] stringValue]];
 		[[JZManagedObjectController sharedInstance] setGameID:[(NSNumber*)[dictionary objectForKey:@"id"] stringValue]];

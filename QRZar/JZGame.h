@@ -14,6 +14,7 @@
 	NSDate* _endTime;
 	NSString* _gameID;
 	NSArray* _teams;
+	NSArray* _players;
 	BOOL _started;
 	NSString* _gameName;
 }
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSArray* teams;
 @property (nonatomic, retain) NSString* gameName;
 @property					  BOOL started;
+@property (nonatomic, retain) NSArray* players;
 
 -(id)initWithDictionary:(NSDictionary*)dictionary;
 
