@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ZXingWidgetController.h"
+#import "JZRadarViewController.h"
 
 @interface HUDViewController : UIViewController<ZXingDelegate>{
 	ZXingWidgetController* _widController;
 	BOOL _scanPending;
 	NSTimer* _loopTimer;
+	UINavigationController* _radarView;
 }
 
 
@@ -31,13 +33,20 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* bloodSplatterOverlay;
 
+@property (nonatomic, retain) IBOutlet UIButton* ranksButton;
+@property (nonatomic, retain) IBOutlet UIButton* radarButton;
+
 @property (nonatomic) BOOL scanPending;
 @property (nonatomic, retain) NSTimer* loopTimer;
+
+@property (nonatomic, retain) UINavigationController* radarView;
 
 -(IBAction)startScan;
 
 -(IBAction)stopScan;
 
 -(IBAction)showRankings;
+
+-(IBAction)showRadar;
 
 @end

@@ -9,26 +9,30 @@
 #import <Foundation/Foundation.h>
 #import "JZTeam.h"
 #import "JZGame.h"
+#import "JZGamePlayers.h"
 
 
 @interface JZPlayer : NSObject{
-	NSString* _name;
+	
 	JZTeam* _team;
 	NSString* _apiToken;
 	NSString* _playerID;
+	JZGamePlayers* _gamePlayer;
 	JZGame* _game;
-	BOOL _alive;
 }
 
-@property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSString* apiToken;
 @property (nonatomic, retain) NSString* playerID;
 @property (nonatomic, retain) JZTeam* team;
 @property (nonatomic, retain) JZGame* game;
-@property (nonatomic, assign) BOOL alive;
+@property (nonatomic, retain) JZGamePlayers* gamePlayer;
 
 +(JZPlayer*)sharedInstance;
 
--(void)extendedSetAlive:(BOOL)alive;
++(void)destroy;
+
+-(BOOL)alive;
+-(void)setAlive:(BOOL)alive;
+
 
 @end

@@ -6,7 +6,11 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#define ROW_HEIGHT 70
+
 #import "RankingViewController.h"
+#import "JZPlayer.h"
+#import "JZRankTableCellCustomView.h"
 
 @implementation RankingViewController
 
@@ -17,6 +21,8 @@
         [self setTitle:@"Rankings"];
 		UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
 		self.navigationItem.rightBarButtonItem = done;
+		[[self view] setBackgroundColor:[UIColor blackColor]];
+		[(UITableView*)[self view] setSeparatorColor:[UIColor clearColor]];
     }
     return self;
 }
@@ -83,16 +89,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return [[[[JZPlayer sharedInstance] game] players] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,9 +108,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
+    [cell addSubview:[[JZRankTableCellCustomView alloc] initWithFrame:CGRectMake(0, 0, [tableView frame].size.width, ROW_HEIGHT) andPlayer:[[[[JZPlayer sharedInstance] game] rankedPlayers] objectAtIndex:[indexPath row]] rowNumber:[indexPath row]]];
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+	return ROW_HEIGHT;
 }
 
 /*

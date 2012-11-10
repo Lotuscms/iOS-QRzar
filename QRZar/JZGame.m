@@ -8,7 +8,7 @@
 
 #import "JZGame.h"
 #import "JZManagedObjectController.h"
-
+#import "JZGamePlayers.h"
 
 @implementation JZGame
 
@@ -17,7 +17,6 @@
 @synthesize endTime = _endTime;
 @synthesize started = _started;
 @synthesize gameName = _gameName;
-@synthesize players = _players;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary{
 	
@@ -41,10 +40,35 @@
 		NSArray* teams = [dictionary objectForKey:@"teams"];
 		for (int i = 0; i<[teams count]; i++) {
 			[teamObjects addObject:[[JZTeam alloc] initWithDictionary:[teams objectAtIndex:i]]];
+			
 		}
 		[self setTeams:teamObjects];
+		
 	}
 	return self;
+}
+
+
+
+-(NSArray*)players{
+	NSMutableArray* players = [NSMutableArray arrayWithArray:[[[self teams] objectAtIndex:0] players]];
+	for (int i = 1; i<[[self teams] count]; i++) {
+		[players addObjectsFromArray:[[[self teams] objectAtIndex:i] players]];
+	}
+	return players;
+}
+
+-(NSArray*)visablePlayers{
+	NSMutableArray* players = [NSMutableArray arrayWithArray:[[[self teams] objectAtIndex:0] players]];
+	for (int i = 1; i<[[self teams] count]; i++) {
+		[players addObjectsFromArray:[[[self teams] objectAtIndex:i] players]];
+	}
+	for (int i = 0; i<[players count]; i++) {
+		if (![[players objectAtIndex:i] visible]) {
+			[players removeObjectAtIndex:i];
+		}
+	}
+	return players;
 }
 
 -(JZTeam*)getTeamAtRank:(int)rank{
@@ -60,6 +84,43 @@
 				   
 	}]];
 	return (JZTeam*)[[self teams] objectAtIndex:rank-1];
+}
+
+-(NSArray*)rankedPlayers{
+	
+	return [[self players] sortedArrayUsingComparator:^NSComparisonResult(JZGamePlayers* obj1, JZGamePlayers* obj2) {
+		if ([obj1 score] > [obj2 score]) {
+			return (NSComparisonResult)NSOrderedAscending;
+		}else if([obj1 score] < [obj2 score]){
+			return (NSComparisonResult)NSOrderedDescending;
+		}else{
+			return (NSComparisonResult)NSOrderedSame;
+		}
+		
+	}];
+	
+}
+
+-(int)getRankForPlayerWithID:(NSString *)playerID{
+	NSArray* sortedPlayers = [self rankedPlayers];
+	
+	int player = [playerID intValue];
+	
+	for (int i = 0; i<[sortedPlayers count]; i++) {
+		if (player == [(JZGamePlayers*)[sortedPlayers objectAtIndex:i] playerID]) {
+			return i+1;
+		}
+	}
+	return 0;
+}
+
+-(JZTeam*)getTeamWithID:(int)teamID{
+	for (int i = 0; i<[[self teams] count]; i++) {
+		if (teamID==[(JZTeam*)[[self teams] objectAtIndex:i] teamID]) {
+			return [[self teams] objectAtIndex:i];
+		}
+	}
+	return nil;
 }
 
 

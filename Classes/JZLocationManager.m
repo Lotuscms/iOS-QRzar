@@ -8,6 +8,8 @@
 
 #import "JZLocationManager.h"
 
+
+
 @interface JZLocationManager (PrivateMethods)
 
 -(void) createLocationManager;
@@ -18,6 +20,7 @@
 
 @synthesize currentLocation = _currentLocation;
 @synthesize locationManager = _locationManager;
+@synthesize delegate = _delegate;
 
 - (id)init {
     self = [super init];
@@ -33,9 +36,15 @@
 	[[self locationManager] setDelegate:self];
 	[[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
 	[[self locationManager] startUpdatingLocation];
+	[[self locationManager] startUpdatingHeading];
 }
 		 
-		 
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
+	if ([self delegate]!=nil) {
+		[[self delegate] headingUpdate:newHeading];
+	}
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
 	
 	[self setCurrentLocation:newLocation];

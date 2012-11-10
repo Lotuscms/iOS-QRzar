@@ -12,7 +12,7 @@
 #import "JZGlobalResources.h"
 #import "JZManagedObjectController.h"
 
-NSString* server = @"http://www.arboroia.com:443/";
+NSString* server = @"http://qrzar.com:443/";
 
 @interface JZTopHatConnect (PrivateMethods) 
 
@@ -35,7 +35,7 @@ NSString* server = @"http://www.arboroia.com:443/";
 																 method:@"POST" 
 																   body:@"data={}" 
 																  error:&err
-															withTimeOut:5
+															withTimeOut:2
 										 ];
 			
 			if ([self errorHandlerWithResponse:json error:err]!=200) {
@@ -46,9 +46,6 @@ NSString* server = @"http://www.arboroia.com:443/";
 				
 			}else{
 				
-				
-				
-				[[JZPlayer sharedInstance] setName:[[[[UIDevice currentDevice] name] componentsSeparatedByString:@"’"] componentsJoinedByString:@""]];
 				[[JZPlayer sharedInstance] setApiToken:[json valueForKey:@"apitoken"]];
 			}
 		}
@@ -57,44 +54,37 @@ NSString* server = @"http://www.arboroia.com:443/";
     return self;
 }
 
--(int)updateTeamScores{
+-(int)updatePlayersOnTeam:(JZTeam *)team{
 	
-	NSArray* teams = [[[JZPlayer sharedInstance] game] teams];
-	int errorCode = 200;
-	for (int i = 0; i<[teams count]; i++) {
-		NSError* err = nil;
-		NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@teamscore/%i?apitoken=%@", server,
-																	 [(JZTeam*)[teams objectAtIndex:i] teamID],
-																	 [[JZPlayer sharedInstance] apiToken]] 
-															 method:@"GET" 
-															   body:NULL 
-															  error:&err
-														withTimeOut:2
-									 ];
-		int tempErrorCode= [self errorHandlerWithResponse:json error:err];
-		if (tempErrorCode==200) {
-			[(JZTeam*)[teams objectAtIndex:i] extendedSetTeamScore:[(NSNumber*)[json valueForKey:@"score"] intValue]];
-		}else{
-			errorCode = tempErrorCode;
-		}
+	NSError* err = nil;
+	
+	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@teams/%i?apitoken=%@&depth=2", server,[team teamID],[[JZPlayer sharedInstance] apiToken]] 
+														 method:@"GET" 
+														   body:NULL 
+														  error:&err
+													withTimeOut:2
+								 ];
+	int errorCode = [self errorHandlerWithResponse:json error:err];
+	if (errorCode==200) {
+		[team updatePlayersScoresAndLocationWithArray:[json valueForKey:@"players"]];
 	}
 	return errorCode;
-	
 }
 
 -(int)resumeStoredGame{
+	
 	NSError* err = nil;
 	
 	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@games/%@?apitoken=%@&depth=4", server,[[JZManagedObjectController sharedInstance] gameID],[[JZPlayer sharedInstance] apiToken]] 
 														 method:@"GET" 
 														   body:NULL 
 														  error:&err
-													withTimeOut:10
+													withTimeOut:2
 								 ];
 	
 	if (!err&&![json valueForKey:@"error_code"]) {
 		
-		NSLog(@"%@",[json JSONRepresentation]);
+//		NSLog(@"%@",[json JSONRepresentation]);
 		
 		[[JZPlayer sharedInstance] setPlayerID:[[JZManagedObjectController sharedInstance] playerID]];
 		
@@ -107,8 +97,6 @@ NSString* server = @"http://www.arboroia.com:443/";
 				[[JZPlayer sharedInstance] setTeam:[teams objectAtIndex:i]];
 			}
 		}
-		[self updateTeamScores];
-		[self updateAlive];
 	}
 	return [self errorHandlerWithResponse:json error:err];
 }
@@ -117,32 +105,57 @@ NSString* server = @"http://www.arboroia.com:443/";
 	
 	NSError* err = nil;
 	
-	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@players/?apitoken=%@&depth=1", server,[[JZPlayer sharedInstance] apiToken]] 
-														 method:@"POST" 
-														   body:[NSString stringWithFormat:@"data={\"name\":\"%@\",\"game\":{\"id\":\"%@\"},\"qrcode\":\"%@\"}",[[JZPlayer sharedInstance] name], gameID, qrCode] 
+	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@games/%@?apitoken=%@&depth=1", server, gameID,[[JZPlayer sharedInstance] apiToken]] 
+														 method:@"GET" 
+														   body:NULL
 														  error:&err
-													withTimeOut:10
+													withTimeOut:5
 								 ];
-	
-	if (!err&&![json valueForKey:@"error_code"]) {
-		NSLog(@"%@",[json JSONRepresentation]);
+	int errorCode = [self errorHandlerWithResponse:json error:err];
+	if (errorCode==200) {
 		
-		[[JZPlayer sharedInstance] setPlayerID:[(NSNumber*)[json valueForKey:@"id"]stringValue]];
+		NSString* endTime = [json valueForKey:@"end_time"];
 		
-		[[JZPlayer sharedInstance] setGame:[[JZGame alloc] initWithDictionary:[[json valueForKey:@"team"] valueForKey:@"game"]]];
+		NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+		[dateFormatter setLocale:[NSLocale systemLocale]];
+		NSDate* endTimeDate = [dateFormatter dateFromString:endTime];
+		[[JZManagedObjectController sharedInstance] setGameEndTime:endTimeDate];
 		
-		NSArray* teams = [[[JZPlayer sharedInstance] game] teams];
-		
-		[[JZManagedObjectController sharedInstance] setTeamID:[[json valueForKey:@"team"] valueForKey:@"id"]];
-		
-		for (int i = 0; i<[teams count]; i++) {
-			if ([[[json valueForKey:@"team"] valueForKey:@"id"] intValue]==[(JZTeam*)[teams objectAtIndex:i] teamID]) {
-				[[JZPlayer sharedInstance] setTeam:[teams objectAtIndex:i]];
+		if ([endTimeDate timeIntervalSinceNow]<0) {
+			
+			return 404;
+			
+		}else{
+			
+			NSString* name = [[[[UIDevice currentDevice] name] componentsSeparatedByString:@"’"] componentsJoinedByString:@""];
+			
+			json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@players/?apitoken=%@&depth=1", server,[[JZPlayer sharedInstance] apiToken]] 
+											method:@"POST" 
+											  body:[NSString stringWithFormat:@"data={\"name\":\"%@\",\"game\":{\"id\":\"%@\"},\"qrcode\":\"%@\"}",name, gameID, qrCode] 
+											 error:&err
+									   withTimeOut:5
+					];
+			
+			if (!err&&![json valueForKey:@"error_code"]) {
+				NSLog(@"%@",[json JSONRepresentation]);
+				
+				[[JZManagedObjectController sharedInstance] setPlayerID:[(NSNumber*)[json valueForKey:@"id"]stringValue]];
+				
+				[[JZManagedObjectController sharedInstance] setGameID:[[[[json valueForKey:@"team"] valueForKey:@"game"] valueForKey:@"id"] stringValue]];
+				
+				[[JZManagedObjectController sharedInstance] setTeamID:[[json valueForKey:@"team"] valueForKey:@"id"]];
+				
+				[[NSNotificationCenter defaultCenter] postNotificationName:@"Game Joined" object:self];
+				
+				return [self resumeStoredGame];
 			}
+			return [self errorHandlerWithResponse:json error:err];
 		}
-		[self updateTeamScores];
+	}else{
+		return errorCode;
 	}
-	return [self errorHandlerWithResponse:json error:err];
+	
 }
 
 
@@ -194,29 +207,14 @@ NSString* server = @"http://www.arboroia.com:443/";
 
 }
 
--(int)updateAlive{
-	
-	NSError* err = nil;
-	NSJSONSerialization* json = [self getJSONFromServerWithPath:[NSString stringWithFormat:@"%@alive/%@?apitoken=%@", server,[[JZPlayer sharedInstance] playerID],[[JZPlayer sharedInstance] apiToken]] 
-														 method:@"GET" 
-														   body:NULL 
-														  error:&err
-													withTimeOut:2
-								 ];
-	if (!err&&[json valueForKey:@"alive"]) {
-		[[JZPlayer sharedInstance] extendedSetAlive:[[json valueForKey:@"alive"] boolValue]];
-	}
-	
-	return [self errorHandlerWithResponse:json error:err];
-}
+
 
 -(int)errorHandlerWithResponse:(NSJSONSerialization *)response error:(NSError *)error{
-	
-	if (response==nil) {
-		return 0;
-	}else if(error!=nil){
+	if(error!=nil){
 		NSLog(@"error:%@",error.description);
 		return -1;
+	}else if (response==nil) {
+		return 0;
 	}else if ([response valueForKey:@"error_code"]) {
 		NSLog(@"response:%@",[response valueForKey:@"error_code"]);
 		return [[response valueForKey:@"error_code"] intValue];
@@ -227,13 +225,13 @@ NSString* server = @"http://www.arboroia.com:443/";
 
 -(NSJSONSerialization*)getJSONFromServerWithPath:(NSString *)path method:(NSString *)method body:(NSString *)body error:(NSError *__autoreleasing *)err withTimeOut:(int)timeOut{
 	
-	NSLog(@"%@",path);
-	NSLog(@"%@",method);
+//	NSLog(@"%@",path);
+//	NSLog(@"%@",method);
 	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path]];
 	
 	
 	if (timeOut>0) {
-		[request setTimeoutInterval:5];
+		[request setTimeoutInterval:timeOut];
 	}
 	
 	[request setHTTPMethod:method];
@@ -242,7 +240,7 @@ NSString* server = @"http://www.arboroia.com:443/";
 	
 	if (body!=NULL) {
 		
-		NSLog(@"%@",body);
+//		NSLog(@"%@",body);
 		NSData* content = [body dataUsingEncoding:NSASCIIStringEncoding];
 		[request setHTTPBody:content];
 	}

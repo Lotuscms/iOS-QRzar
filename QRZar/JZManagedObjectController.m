@@ -100,7 +100,7 @@ static JZManagedObjectController* singleton = nil;
 	if ([self endTime] == nil) {
 		return true;
 	}
-	NSLog(@"endtime:%@",[[self game] valueForKey:@"endTime"]);
+//	NSLog(@"endtime:%@",[[self game] valueForKey:@"endTime"]);
 	return [(NSDate*)[[self game] valueForKey:@"endTime"] compare:[NSDate date]]==NSOrderedAscending;
 }
 

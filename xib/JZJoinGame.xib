@@ -311,7 +311,6 @@
 						<string key="NSFrame">{{0, 433}, {320, 47}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:567</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -342,6 +341,7 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="487268461">
 									<string key="name">GillSans-Bold</string>
 									<string key="family">Gill Sans</string>
@@ -375,6 +375,7 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
 								<reference key="IBUIFontDescription" ref="487268461"/>
 								<reference key="IBUIFont" ref="404538335"/>
 							</object>
@@ -1226,7 +1227,7 @@
 			<string key="01-refresh@2x.png">{47, 51}</string>
 			<string key="LaunchBrightBackground.png">{158, 174}</string>
 			<string key="LaunchButton@2x.png">{178, 115}</string>
-			<string key="LaunchDarkBackground@2x.png">{146, 166}</string>
+			<string key="LaunchDarkBackground@2x.png">{146, 164}</string>
 			<string key="LaunchQRCode.png">{518, 514}</string>
 			<string key="LaunchTopSkin.png">{640, 685}</string>
 			<string key="SplashLogo.png">{404, 117}</string>

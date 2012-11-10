@@ -54,8 +54,10 @@ typedef enum{
 @property (nonatomic, retain) IBOutlet UIImageView* lowerBackground;
 @property					  ButtonTags senderButton;
 @property					  RefreshState refreshState;
+@property					  ButtonTags joinState;
 @property (nonatomic, retain) NSString* gameCode;
 @property (nonatomic, retain) NSString* qrCode;
+
 
 -(IBAction)startScan:(id)sender;
 -(IBAction)stopScan:(id)sender;

@@ -17,6 +17,7 @@
 	int _teamID;
 	NSString* _referenceCode;
 	NSString* _name;
+	NSArray* _players;
 }
 
 @property (nonatomic, retain) UIColor* teamColor;
@@ -24,9 +25,10 @@
 @property (nonatomic) int teamID;
 @property (nonatomic, retain) NSString* referenceCode;
 @property (nonatomic, retain) NSString* name;
+@property (nonatomic, retain) NSArray* players;
 
 -(id)initWithDictionary:(NSDictionary*)dictionary;
 
--(void)extendedSetTeamScore:(int)teamScore;
+-(void)updatePlayersScoresAndLocationWithArray:(NSArray*)array;
 
 @end

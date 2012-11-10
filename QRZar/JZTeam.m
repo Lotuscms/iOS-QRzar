@@ -7,6 +7,9 @@
 //
 
 #import "JZTeam.h"
+#import "JZGamePlayers.h"
+
+
 
 @implementation JZTeam
 
@@ -15,6 +18,7 @@
 @synthesize teamScore = _teamScore;
 @synthesize name =_name;
 @synthesize referenceCode = _referenceCode;
+@synthesize players = _players;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary{
 	self = [super init];
@@ -25,15 +29,64 @@
 		[self setTeamScore:0];
 		[self setTeamID:[[dictionary objectForKey:@"id"] intValue]];
 		[self setName:[dictionary objectForKey:@"name"]];
+		
+		NSArray* players = [dictionary valueForKey:@"players"];
+		
+		NSMutableArray* playersOnTeam = [[NSMutableArray alloc] init];
+		for (int j = 0; j<[players count]; j++) {
+			[playersOnTeam addObject:[[JZGamePlayers alloc] initWithDictionary:[players objectAtIndex:j] andTeam:self]];
+		}
+		[self setPlayers:playersOnTeam];
+		
 	}
 	return self;
 }
 
--(void)extendedSetTeamScore:(int)teamScore{
-	if (self.teamScore!=teamScore) {
-		self.teamScore = teamScore;
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"Team Score Change" object:NULL];
+-(int)teamScore{
+	int sum =0;
+	for (int i = 0; i<[[self players] count]; i++) {
+		sum += [[[self players] objectAtIndex:i] score];
 	}
+	return sum;
+}
+
+-(void)updatePlayersScoresAndLocationWithArray:(NSArray *)array{
+	
+	array = [array sortedArrayUsingComparator:^NSComparisonResult(NSDictionary* obj1, NSDictionary* obj2) {
+		if ([[obj1 valueForKey:@"id"] intValue] > [[obj2 valueForKey:@"id"] intValue]) {
+			return (NSComparisonResult)NSOrderedDescending;
+		}else if([[obj1 valueForKey:@"id"] intValue] < [[obj2 valueForKey:@"id"] intValue]){
+			return (NSComparisonResult)NSOrderedAscending;
+		}else{
+			return (NSComparisonResult)NSOrderedSame;
+		}
+	}];
+	NSMutableArray* players = [[[self players] sortedArrayUsingComparator:^NSComparisonResult(JZGamePlayers* obj1, JZGamePlayers* obj2) {
+		if ([obj1 playerID] > [obj2 playerID]) {
+			return (NSComparisonResult)NSOrderedDescending;
+		}else if([obj1 playerID] < [obj2 playerID]){
+			return (NSComparisonResult)NSOrderedAscending;
+		}else{
+			return (NSComparisonResult)NSOrderedSame;
+		}
+	}] mutableCopy];
+	
+	for (int i = 0; i<[array count]; i++) {
+		if (i<[players count]) {
+			
+			while (i<[players count]&&[[[array objectAtIndex:i] valueForKey:@"id"] intValue]!=[[players objectAtIndex:i] playerID]) {
+				
+				[players removeObjectAtIndex:i];
+			}
+			if (i<[players count]) {
+				[[players objectAtIndex:i] updateWithDictionary:[array objectAtIndex:i]];
+			}
+		}else{
+			
+			[players addObject:[[JZGamePlayers alloc] initWithDictionary:[array objectAtIndex:i] andTeam:self]];
+		}
+	}
+	[self setPlayers:players];
 }
 
 @end

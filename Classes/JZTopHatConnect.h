@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "JZTeam.h"
 
 @interface JZTopHatConnect : NSObject <NSStreamDelegate>
 
@@ -16,8 +16,8 @@
 -(int)revivePlayer:(NSString*)reviveCode;
 -(int)playerHasKilledPlayerWithID:(NSString*)victimID;
 
--(int)updateAlive;
--(int)updateTeamScores;
+
 -(int)updateLocation;
+-(int)updatePlayersOnTeam:(JZTeam*)team;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "JZPlayer.h"
 #import "JZManagedObjectController.h"
+#import "JZGamePlayers.h"
 
 static JZPlayer* singleton = nil;
 
@@ -15,27 +16,43 @@ static JZPlayer* singleton = nil;
 
 @synthesize team = _team;
 @synthesize playerID = _playerID;
-@synthesize name = _name;
 @synthesize apiToken = _apiToken;
+@synthesize gamePlayer = _gamePlayer;
+
 @synthesize game = _game;
-@synthesize alive = _alive;
 
 +(JZPlayer*)sharedInstance{
 	
 	if (singleton==nil) {
 		singleton = [[JZPlayer alloc] init];
 		[singleton setAlive:YES];
+		
 	}
 	return singleton;
 }
++(void)destroy{
+	singleton = nil;
+}
 
--(void)extendedSetAlive:(BOOL)alive{
+-(void)setAlive:(BOOL)alive{
 	
-	if (self.alive!=alive) {
-		self.alive = alive;
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"Alive Change" object:self];
+	[[self gamePlayer] setAlive:alive];
+}
+
+-(JZGamePlayers*) gamePlayer{
+	if (_gamePlayer==nil) {
+		for (int i = 0; i<[[[self team] players] count]; i++) {
+			if ([[self playerID] intValue] == [(JZGamePlayers*)[[[self team] players] objectAtIndex:i] playerID]) {
+				_gamePlayer = (JZGamePlayers*)[[[self team] players] objectAtIndex:i];
+			}
+		}
 	}
+	return _gamePlayer;
+}
+
+-(BOOL)alive{
 	
+	return [[self gamePlayer] alive];
 }
 
 -(void)setPlayerID:(NSString *)playerID{

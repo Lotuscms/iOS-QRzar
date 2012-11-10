@@ -13,16 +13,24 @@
 @interface JZGamePlayers : NSObject{
 	
 	JZTeam* _team;
-	NSString* _playerID;
+	int _playerID;
 	NSString* _name;
 	CLLocation* _location;
 	int _score;
+	BOOL _alive;
+	BOOL _visible;
 }
 
 @property (nonatomic, retain) JZTeam* team;
-@property (nonatomic, retain) NSString* playerID;
+@property                     int playerID;
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) CLLocation* location;
 @property					  int score;
+@property					  BOOL alive;
+@property					  BOOL visible;
+
+-(id)initWithDictionary:(NSDictionary*)dictionary andTeam:(JZTeam*)team;
+
+-(void)updateWithDictionary:(NSDictionary*)dictionary;
 
 @end
