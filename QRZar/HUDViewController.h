@@ -15,6 +15,7 @@
 	BOOL _scanPending;
 	NSTimer* _loopTimer;
 	UINavigationController* _radarView;
+	BOOL continueScan;
 }
 
 
@@ -35,6 +36,10 @@
 
 @property (nonatomic, retain) IBOutlet UIButton* ranksButton;
 @property (nonatomic, retain) IBOutlet UIButton* radarButton;
+@property (nonatomic, retain) IBOutlet UIImageView* hLazer1;
+@property (nonatomic, retain) IBOutlet UIImageView* hLazer2;
+@property (nonatomic, retain) IBOutlet UIImageView* vLazer1;
+@property (nonatomic, retain) IBOutlet UIImageView* vLazer2;
 
 @property (nonatomic) BOOL scanPending;
 @property (nonatomic, retain) NSTimer* loopTimer;

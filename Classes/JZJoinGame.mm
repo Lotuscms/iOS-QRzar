@@ -8,10 +8,10 @@
 
 #import "JZJoinGame.h"
 #import "QRCodeReader.h"
-#import "HUDViewController.h"
 #import "JZPlayer.h"
 #import "JZManagedObjectController.h"
 #import "JZAudioManager.h"
+#import "RankingViewController.h"
 
 @interface JZJoinGame (PrivateMethods)
 
@@ -204,8 +204,19 @@
 	
 	
 	switch (retCode) {
-		case 200:
-			[self presentModalViewController:[[HUDViewController alloc] init] animated:NO];
+		case 200:{
+			RankingViewController* rankingView = [[RankingViewController alloc] initWithStyle:UITableViewStylePlain];
+			
+			UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:rankingView];
+			
+			[[navigationController navigationBar] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+																		  [UIFont fontWithName:@"GillSans-Bold" size:20],UITextAttributeFont, 
+																		  [UIColor colorWithRed:0.98 green:0.85 blue:0.65 alpha:1.00], UITextAttributeTextColor, 
+																		  nil]];
+			
+			[[navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.14 green:0.10 blue:0.00 alpha:1.00]];
+			[self presentModalViewController:navigationController animated:NO];
+		}
 			break;
 		case 0:
 			[contactingServer setText:@"Empty Response from server"];

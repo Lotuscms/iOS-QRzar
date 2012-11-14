@@ -62,7 +62,7 @@
     self.oneDMode = shouldUseoOneDMode;
     self.showCancel = shouldShowCancel;
     self.wantsFullScreenLayout = YES;
-    self.cropRect = crop;
+    self.cropRect = CGRectMake(crop.origin.y, 320-(crop.origin.x+crop.size.width), crop.size.height, crop.size.width);
     beepSound = -1;
     decoding = NO;
    

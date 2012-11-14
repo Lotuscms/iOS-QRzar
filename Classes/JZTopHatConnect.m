@@ -225,7 +225,7 @@ NSString* server = @"http://qrzar.com:443/";
 
 -(NSJSONSerialization*)getJSONFromServerWithPath:(NSString *)path method:(NSString *)method body:(NSString *)body error:(NSError *__autoreleasing *)err withTimeOut:(int)timeOut{
 	
-//	NSLog(@"%@",path);
+	NSLog(@"%@",path);
 //	NSLog(@"%@",method);
 	NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path]];
 	

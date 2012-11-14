@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HUDViewController.h"
 
-@interface RankingViewController : UITableViewController 
+@interface RankingViewController : UITableViewController {
+	BOOL initialLaunch;
+	HUDViewController* _hud;
+}
+
+@property (nonatomic, retain) HUDViewController* hud;
 
 -(void)dismiss;
+-(void)terminate;
 
 @end

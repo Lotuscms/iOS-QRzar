@@ -73,6 +73,8 @@
 		3BDA9D03164CA6F4008E7459 /* JZAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA9D02164CA6F3008E7459 /* JZAudioManager.m */; };
 		3BE25FEE14E2AE6B008332DC /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE25FE914E2AE27008332DC /* libZXingWidget.a */; };
 		3BE7478914E2E8DE00EE9C42 /* JZJoinGame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */; };
+		3BE8B072164DF0BE006D1165 /* lazer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE8B071164DF0BE006D1165 /* lazer@2x.png */; };
+		3BE8B074164E1412006D1165 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE8B073164E1412006D1165 /* appicon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,8 @@
 		3BDA9D02164CA6F3008E7459 /* JZAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZAudioManager.m; sourceTree = "<group>"; };
 		3BE25FE014E2AE26008332DC /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = "zxing-2.0/iphone/ZXingWidget/ZXingWidget.xcodeproj"; sourceTree = "<group>"; };
 		3BE7478814E2E8DE00EE9C42 /* JZJoinGame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = JZJoinGame.mm; path = ../Classes/JZJoinGame.mm; sourceTree = "<group>"; };
+		3BE8B071164DF0BE006D1165 /* lazer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lazer@2x.png"; sourceTree = "<group>"; };
+		3BE8B073164E1412006D1165 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +411,8 @@
 		3BDA36A014E54F3B00944B4D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BE8B073164E1412006D1165 /* appicon.png */,
+				3BE8B071164DF0BE006D1165 /* lazer@2x.png */,
 				3B68149816471F9D00C911DF /* BloodSplatter.png */,
 				3B68149A1647221200C911DF /* BloodSplatterClearedAfterPress.png */,
 				3BD8D02814EA8D3C00319EEB /* appicon@2x.png */,
@@ -541,6 +547,8 @@
 				3BDA9CF7164C7C5C008E7459 /* DST-DarkFuture.mp3 in Resources */,
 				3BDA9CF9164C8865008E7459 /* electric_door_opening_2.wav in Resources */,
 				3BDA9D00164C9B49008E7459 /* scanner.mp3 in Resources */,
+				3BE8B072164DF0BE006D1165 /* lazer@2x.png in Resources */,
+				3BE8B074164E1412006D1165 /* appicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +621,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -628,6 +637,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -638,7 +649,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -647,6 +659,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -655,6 +669,8 @@
 		3B48A94814D5FDD800846AD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Conor Brady";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QRZar/QRZar-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -663,6 +679,8 @@
 				);
 				INFOPLIST_FILE = "QRZar/QRZar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "589131DE-2101-4ED8-AF7D-D7FB7DC1BCFC";
 				"PUBLIC_HEADERS_FOLDER_PATH[sdk=*]" = "$(CONTENTS_FOLDER_PATH)/Headers";
 				USER_HEADER_SEARCH_PATHS = "zxing-2.0/iphone/ZXingWidget/Classes/** zxing-2.0/cpp/core/src/";
 				WRAPPER_EXTENSION = app;
@@ -672,6 +690,8 @@
 		3B48A94914D5FDD800846AD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Conor Brady";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QRZar/QRZar-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -680,6 +700,8 @@
 				);
 				INFOPLIST_FILE = "QRZar/QRZar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "589131DE-2101-4ED8-AF7D-D7FB7DC1BCFC";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				USER_HEADER_SEARCH_PATHS = "zxing-2.0/iphone/ZXingWidget/Classes/** zxing-2.0/cpp/core/src/";
 				WRAPPER_EXTENSION = app;

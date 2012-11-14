@@ -11,24 +11,43 @@
 #import "RankingViewController.h"
 #import "JZPlayer.h"
 #import "JZRankTableCellCustomView.h"
+#import "HUDViewController.h"
+#import "JZManagedObjectController.h"
+#import "JZAudioManager.h"
 
 @implementation RankingViewController
+
+@synthesize hud = _hud;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         [self setTitle:@"Rankings"];
+		
 		UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
 		self.navigationItem.rightBarButtonItem = done;
 		[[self view] setBackgroundColor:[UIColor blackColor]];
 		[(UITableView*)[self view] setSeparatorColor:[UIColor clearColor]];
+		initialLaunch = true;
+		[self setHud:[[HUDViewController alloc] init]];
     }
     return self;
 }
 
 -(void)dismiss{
-	[[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
+	if ([[JZManagedObjectController sharedInstance] isGameOver]) {
+		[self terminate];
+	}else{
+		[self presentModalViewController:[self hud] animated:NO];
+	}
+	
+}
+
+-(void)terminate{
+	[JZPlayer destroy];
+	[[JZAudioManager sharedInstance] playLaunchMusic:YES];
+	[[self parentViewController] dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +63,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -67,6 +86,18 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+	if (initialLaunch) {
+		[self presentModalViewController:[self hud] animated:NO];
+		initialLaunch = false;
+	}
+	[(UITableView*)[self view] reloadData];
+	if (![[JZManagedObjectController sharedInstance] isGameOver]) {
+		UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Back To Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(terminate)];
+		[done setTintColor:[UIColor brownColor]];
+		self.navigationItem.leftBarButtonItem = done;
+	}else{
+		self.navigationItem.leftBarButtonItem = nil;
+	}
 }
 
 - (void)viewWillDisappear:(BOOL)animated

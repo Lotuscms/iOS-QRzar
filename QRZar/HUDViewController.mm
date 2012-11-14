@@ -26,12 +26,13 @@
 -(void) handleKill:(NSNotification*)notification;
 -(void) handleRespawn:(NSNotification*)notification;
 -(NSString*) addSuffixToNumber:(int)number;
+-(void) lazerPhase;
 
 @end
 
 @implementation HUDViewController
 
-@synthesize tabBar, topBar, rightTeamScore, rightTeamTitle, leftTeamScore, leftTeamTitle, clock, bloodSplatterOverlay, messageReadOut, ranksButton, radarButton;
+@synthesize tabBar, topBar, rightTeamScore, rightTeamTitle, leftTeamScore, leftTeamTitle, clock, bloodSplatterOverlay, messageReadOut, ranksButton, radarButton, hLazer1, hLazer2, vLazer1, vLazer2;
 @synthesize widController = _widController;
 @synthesize scanPending = _scanPending;
 @synthesize loopTimer = _loopTimer;
@@ -67,6 +68,25 @@
 		
     }
     return self;
+}
+
+-(void) lazerPhase{
+	
+	CGRect hLazer1dest = hLazer2.frame;
+	CGRect hLazer2dest = hLazer1.frame;
+	CGRect vLazer1dest = vLazer2.frame;
+	CGRect vLazer2dest = vLazer1.frame;
+	
+	[UIView animateWithDuration:0.7 animations:^{
+		[hLazer1 setFrame:hLazer1dest];
+		[hLazer2 setFrame:hLazer2dest];
+		[vLazer1 setFrame:vLazer1dest];
+		[vLazer2 setFrame:vLazer2dest];
+	} completion:^(BOOL finished) {
+		if (finished&&continueScan) {
+			[self lazerPhase];
+		}
+	}];
 }
 															 
 -(void) updateRank{
@@ -118,10 +138,9 @@
 		[self setUpTopBar];
 		[self refreshDeadStatus];
 	}else{
-		[self showRankings];
-		[JZPlayer destroy];
-		[self dismissViewControllerAnimated:NO completion:nil];
+		
 		[[self loopTimer] invalidate];
+		[self showRankings];
 		
 	}
 	
@@ -191,6 +210,7 @@
 }
 
 -(IBAction)startScan{
+
 	if (![self scanPending]) {
 		[messageReadOut setText:@""];
 	}
@@ -199,14 +219,15 @@
 	[self widController].readers = readers;
 	
 	if ([[JZPlayer sharedInstance] alive]) {
-		
+		continueScan= true;
+		[self lazerPhase];
 	}else{
 		[bloodSplatterOverlay setImage:[UIImage imageNamed:@"BloodSplatterClearedAfterPress.png"]];
 	}
 }
 
 -(IBAction)stopScan{
-	
+	continueScan = false;
 	[self widController].readers = NULL;
 	
 	if ([[JZPlayer sharedInstance] alive]) {
@@ -251,20 +272,7 @@
 }
 
 -(IBAction)showRankings{
-	RankingViewController* rankingView = [[RankingViewController alloc] initWithStyle:UITableViewStylePlain];
 	
-	UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:rankingView];
-
-	[[navigationController navigationBar] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-																  [UIFont fontWithName:@"GillSans-Bold" size:20],UITextAttributeFont, 
-																  [UIColor colorWithRed:0.98 green:0.85 blue:0.65 alpha:1.00], UITextAttributeTextColor, 
-																  nil]];
-	
-	[[navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.14 green:0.10 blue:0.00 alpha:1.00]];
-	
-	
-	
-	[self presentModalViewController:navigationController animated:YES];
 	[self dismissModalViewControllerAnimated:NO];
 }
 

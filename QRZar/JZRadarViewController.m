@@ -31,7 +31,7 @@
 		UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
 		self.navigationItem.rightBarButtonItem = done;
 		[[self view] setBackgroundColor:[UIColor blackColor]];
-		[[[JZGlobalResources sharedInstance] locationManager] setDelegate:self];
+		
 		if ((int)(15540000/[radarView scalingFactor])>1000) {
 			[feedbackLabel setText:[NSString stringWithFormat:@"Radius : %d km",(int)(15540000/[radarView scalingFactor]/1000)]];
 		}else{
@@ -92,13 +92,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+	[[[JZGlobalResources sharedInstance] locationManager] setDelegate:self];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-	
+	[[[JZGlobalResources sharedInstance] locationManager] setDelegate:nil];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
