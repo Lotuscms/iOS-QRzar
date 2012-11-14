@@ -9,10 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface JZLocationManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>
+@protocol LocationManagerListenerDelegate <NSObject>
 
-@property (nonatomic, retain) CLLocation* currentLocation;
+-(void)headingUpdate:(CLHeading*)heading;
+
+@end
+
+
+@interface JZLocationManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>{
+	CLLocation* _currentLocation;
+	CLLocationManager* _locationManager;
+	NSObject<LocationManagerListenerDelegate>* _delegate;
+	
+}
+
+@property (nonatomic, strong) CLLocation* currentLocation;
 @property (nonatomic, retain) CLLocationManager* locationManager;
+@property (nonatomic, retain) NSObject<LocationManagerListenerDelegate>* delegate;
 
 -(double)getLong;
 -(double)getLat;

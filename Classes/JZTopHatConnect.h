@@ -7,33 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "JZTeam.h"
 
 @interface JZTopHatConnect : NSObject <NSStreamDelegate>
 
-@property (nonatomic, retain) NSString* playerID;
-
-@property (nonatomic, retain) NSInputStream*  inputStream;
-@property (nonatomic, retain) NSOutputStream* outputStream;
-
-
-
-- (id)initWithPlayerID:(NSString*)playerID;
+-(int)joinGameWithID:(NSString*)gameID andQRCode:(NSString*)qrCode;
+-(int)resumeStoredGame;
+-(int)revivePlayer:(NSString*)reviveCode;
+-(int)playerHasKilledPlayerWithID:(NSString*)victimID;
 
 
-
-
-// In game calls
-
-
--(BOOL)playerHasKilledPlayerWithID:(NSString*)victimID;
-
--(NSDictionary*)getInGameInfoForPlayerWithLongitude:(double)longitude 
-                                        forLatitude:(double)latitude 
-                                       withAccuracy:(double)accuracy;
-
-
-
--(BOOL)revivePlayer;
+-(int)updateLocation;
+-(int)updatePlayersOnTeam:(JZTeam*)team;
 
 @end

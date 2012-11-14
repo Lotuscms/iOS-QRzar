@@ -8,18 +8,31 @@
 
 #import "JZGlobalResources.h"
 
+static JZGlobalResources* sharedResources = nil;
 
 @implementation JZGlobalResources
 
-@synthesize blocker, locationManager, topHatConnect;
+@synthesize locationManager = _locationManager;
+@synthesize topHatConnect = _topHatConnect;
+@synthesize managedObjectContext = _managedObjectContext;
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        blocker =           [[JZOneSecondBlocker alloc] init];
-        locationManager =   [[JZLocationManager alloc] init];
-    }
-    return self;
+
++(JZGlobalResources*)sharedInstance{
+	
+	if (sharedResources == nil) {
+		
+		sharedResources = [[JZGlobalResources alloc] init];
+		
+		if (sharedResources) {
+			if((sharedResources.topHatConnect =[[JZTopHatConnect alloc] init])==NULL || (sharedResources.locationManager = [[JZLocationManager alloc] init])==NULL ){
+				sharedResources = NULL;
+			}
+		}
+	}
+	return sharedResources;
 }
+
+
+
 
 @end
